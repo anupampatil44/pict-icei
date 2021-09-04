@@ -1,6 +1,11 @@
+import 'dart:ui';
+
 import 'package:fancy_bar/fancy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:pict_icei/pages/downloads.dart';
+import 'package:pict_icei/pages/gallery.dart';
+import 'package:pict_icei/pages/home.dart';
 
 class homelayout extends StatefulWidget{
   @override
@@ -10,16 +15,29 @@ class homelayout extends StatefulWidget{
 class _homeState extends State<homelayout> {
 
   int _selectedIndex = 0;
-  void _onItemTapped(int index) {
+
+  PageController _pageController=PageController();
+  List<Widget> _screens=[
+    homepage(),
+    downloadslayout(),
+    gallerylayout(),
+  ];
+
+  void _onPageChanged(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Home"),
+      appBar: AppBar(title: Text("ICEI-2022",
+        style: TextStyle(
+        fontFamily: 'Raleway',
+        ),
+      ),
         centerTitle: true,
         backgroundColor: Colors.black54,
       ),
@@ -30,14 +48,18 @@ class _homeState extends State<homelayout> {
           padding: EdgeInsets.zero,
           physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
           children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.lightGreen,
+            Container(
+              height: 120.0,
+              child: const DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.lightGreen,
+                ),
+                child: Center(child: Text('ICEI-2022',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontFamily: 'Raleway',
+                ),)),
               ),
-              child: Center(child: Text('ICEI 2022',
-              style: TextStyle(
-                fontSize: 20,
-              ),)),
             ),
             ListTile(
               title: const Text('About'),
@@ -126,18 +148,13 @@ class _homeState extends State<homelayout> {
           ],
         )
       ),
-        body:
-      SafeArea(
-        child:
-        Center(
-          child: Text(
-          "Home!!",
-            style: TextStyle(
-                color: Colors.black
-          ),
-          ),
+        body:PageView(
+            controller: _pageController,
+            children: _screens,
+            onPageChanged: _onPageChanged,
+            physics: NeverScrollableScrollPhysics(),
         ),
-      ),
+
     bottomNavigationBar: FancyBottomBar(
       type: FancyType.FancyV1,   // Fancy Bar Type
       items: [
@@ -159,6 +176,7 @@ class _homeState extends State<homelayout> {
       ],
       onItemSelected: (index) {
         print(index);
+        _pageController.jumpToPage(index);
       },
     ),
     );
