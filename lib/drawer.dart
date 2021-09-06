@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:pict_icei/nav-tabs/about.dart';
+import 'package:pict_icei/nav-tabs/author_info.dart';
+import 'package:pict_icei/nav-tabs/committee.dart';
+import 'package:pict_icei/nav-tabs/developers.dart';
+import 'package:pict_icei/nav-tabs/faq.dart';
+import 'package:pict_icei/nav-tabs/icei_history.dart';
+import 'package:pict_icei/nav-tabs/program.dart';
+import 'package:pict_icei/nav-tabs/sponsors.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key? key}) : super(key: key);
@@ -31,83 +38,108 @@ class AppDrawer extends StatelessWidget {
             leading: Icon(Icons.info_outline),
             title: const Text('About'),
             onTap: () {
-              Fluttertoast.showToast(
-                  msg: "About",
-                  toastLength: Toast.LENGTH_SHORT,
-                  gravity: ToastGravity.BOTTOM,
-                  textColor: Colors.white,
-                  fontSize: 16.0);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => About(),
+                ),
+              );
             },
           ),
           ListTile(
-            leading: Icon(Icons.info_outline),
+            leading: Icon(Icons.history),
             title: const Text('ICEI History'),
             onTap: () {
-              Fluttertoast.showToast(
-                  msg: "ICEI History",
-                  toastLength: Toast.LENGTH_SHORT,
-                  gravity: ToastGravity.BOTTOM,
-                  textColor: Colors.white,
-                  fontSize: 16.0);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ICEIHistory(),
+                ),
+              );
             },
           ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.0),
+            child: Divider(
+              thickness: 1.5,
+            ),
+          ),
           ListTile(
-            leading: Icon(Icons.info_outline),
+            leading: Icon(Icons.groups),
             title: const Text('Committee'),
             onTap: () {
-              Fluttertoast.showToast(
-                  msg: "Committee",
-                  toastLength: Toast.LENGTH_SHORT,
-                  gravity: ToastGravity.BOTTOM,
-                  textColor: Colors.white,
-                  fontSize: 16.0);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Committee(),
+                ),
+              );
             },
           ),
           ListTile(
-            leading: Icon(Icons.info_outline),
+            leading: Icon(Icons.attach_money),
             title: const Text('Sponsors'),
             onTap: () {
-              Fluttertoast.showToast(
-                  msg: "Sponsors",
-                  toastLength: Toast.LENGTH_SHORT,
-                  gravity: ToastGravity.BOTTOM,
-                  textColor: Colors.white,
-                  fontSize: 16.0);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Sponsors(),
+                ),
+              );
             },
           ),
           ListTile(
-            leading: Icon(Icons.info_outline),
+            leading: Icon(Icons.event),
             title: const Text('Program'),
             onTap: () {
-              Fluttertoast.showToast(
-                  msg: "Program",
-                  toastLength: Toast.LENGTH_SHORT,
-                  gravity: ToastGravity.BOTTOM,
-                  textColor: Colors.white,
-                  fontSize: 16.0);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Program(),
+                ),
+              );
             },
           ),
           ListTile(
+            leading: Icon(Icons.description),
             title: const Text('Author Info'),
             onTap: () {
-              Fluttertoast.showToast(
-                  msg: "Author Info",
-                  toastLength: Toast.LENGTH_SHORT,
-                  gravity: ToastGravity.BOTTOM,
-                  textColor: Colors.white,
-                  fontSize: 16.0);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AuthorInfo(),
+                ),
+              );
             },
           ),
           ListTile(
-            leading: Icon(Icons.info_outline),
+            leading: Icon(Icons.help_outline),
             title: const Text('FAQs'),
             onTap: () {
-              Fluttertoast.showToast(
-                  msg: "FAQs",
-                  toastLength: Toast.LENGTH_SHORT,
-                  gravity: ToastGravity.BOTTOM,
-                  textColor: Colors.white,
-                  fontSize: 16.0);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => FAQ(),
+                ),
+              );
+            },
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.0),
+            child: Divider(
+              thickness: 1.5,
+            ),
+          ),
+          ListTile(
+            leading: Icon(Icons.code),
+            title: const Text('Developers'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Developers(),
+                ),
+              );
             },
           ),
         ],
