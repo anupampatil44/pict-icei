@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pict_icei/pages/homelayout.dart';
 import 'package:pict_icei/pages/splashscreen.dart';
+
 void main() {
   runApp(MaterialApp(
     initialRoute: '/',
@@ -13,12 +14,11 @@ void main() {
       brightness: Brightness.dark,
       /* dark theme settings */
     ),
-    themeMode: ThemeMode.dark,
+    themeMode: ThemeMode.system,
     home: splashscreen(),
     debugShowCheckedModeBanner: false,
     routes: {
       '/home': (context) => homelayout(),
     },
   ));
-
 }
