@@ -41,10 +41,14 @@ dependencies:
 
   # path
   path: ^1.8.0
+
   
   # path provider
   path_provider: ^2.0.3
+  url_launcher: ^6.0.10
 
+  #text animations:
+  delayed_display: ^2.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
