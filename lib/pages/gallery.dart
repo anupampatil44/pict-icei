@@ -14,6 +14,7 @@ class _galleryState extends State<gallerylayout> {
         child:
         Center(
           child: ListView(
+              scrollDirection: Axis.horizontal,
               physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
               children:<Widget>[
                 Center(
@@ -61,7 +62,7 @@ class FullScreenImage extends StatelessWidget {
           child: Hero(
             tag: tag,
             child: InteractiveViewer(
-              child: Image.asset('assets/Dagadusheth_Ganpati.png',
+              child: Image.asset(this.imageUrl,
                 fit: BoxFit.contain,
               ),
             ),

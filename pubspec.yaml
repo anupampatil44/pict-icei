@@ -64,6 +64,8 @@ flutter:
   assets:
     - assets/
     - assets/downloads_tab/call-for-paper.pdf
+    - assets/aboutpune/
+    - assets/gallery/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
