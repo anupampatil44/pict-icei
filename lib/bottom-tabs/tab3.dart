@@ -5,8 +5,56 @@ class Tab3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context).size;
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          children: [
+            SizedBox(height: mediaQuery.height * 0.02),
+            Text(
+              "Schedules Page",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: mediaQuery.height * 0.05),
+            scheduleContainer("Problem Submission Deadline", "October 10, 2021",
+                mediaQuery.height * 0.05),
+            SizedBox(height: mediaQuery.height * 0.05),
+            scheduleContainer("Acceptance Notification", "November 12, 2021",
+                mediaQuery.height * 0.05),
+            SizedBox(height: mediaQuery.height * 0.05),
+            scheduleContainer("Camera Ready Paper Submission",
+                "December 20, 2021", mediaQuery.height * 0.05)
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget scheduleContainer(String title, String date, double height) {
     return Container(
-      child: Text("Schedule Page"),
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: Colors.lightBlue[100],
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              title,
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+            ),
+            SizedBox(height: height),
+            Text(
+              date,
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

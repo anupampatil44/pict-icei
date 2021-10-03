@@ -42,6 +42,8 @@ class _homeState extends State<homelayout> {
         centerTitle: true,
         backgroundColor: Colors.black54,
       ),
+
+
       drawer: AppDrawer(),
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavyBar(
@@ -58,28 +60,33 @@ class _homeState extends State<homelayout> {
             title: Text('Home'),
             textAlign: TextAlign.center,
             icon: Icon(Icons.home),
-            activeColor: Colors.green,
+
+            activeColor: Colors.lightBlue,
             inactiveColor: Colors.black54,
           ),
           BottomNavyBarItem(
             title: Text('Gallery'),
             icon: Icon(Icons.photo_album),
             textAlign: TextAlign.center,
-            activeColor: Colors.green,
+
+            activeColor: Colors.lightBlue,
             inactiveColor: Colors.black54,
           ),
           BottomNavyBarItem(
             title: Text('Schedule'),
             icon: Icon(Icons.calendar_today),
             textAlign: TextAlign.center,
-            activeColor: Colors.green,
+
+            activeColor: Colors.lightBlue,
             inactiveColor: Colors.black54,
           ),
           BottomNavyBarItem(
             title: Text('Downloads'),
             icon: Icon(Icons.download),
             textAlign: TextAlign.center,
-            activeColor: Colors.green,
+
+            activeColor: Colors.lightBlue,
+
             inactiveColor: Colors.black54,
           )
         ],
