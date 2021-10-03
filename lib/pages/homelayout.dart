@@ -1,7 +1,7 @@
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:flutter/material.dart';
 import 'package:pict_icei/bottom-tabs/tab1.dart';
 import 'package:pict_icei/bottom-tabs/tab2.dart';
 import 'package:pict_icei/bottom-tabs/tab3.dart';
@@ -42,7 +42,8 @@ class _homeState extends State<homelayout> {
         centerTitle: true,
         backgroundColor: Colors.black54,
       ),
-      // backgroundColor: Colors.white,
+
+
       drawer: AppDrawer(),
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavyBar(
