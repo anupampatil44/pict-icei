@@ -73,6 +73,7 @@ flutter:
     - assets/downloads_tab/call-for-paper.pdf
     - assets/aboutpune/
     - assets/gallery/
+    - assets/sponsors/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

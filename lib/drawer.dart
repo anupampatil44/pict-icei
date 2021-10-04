@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pict_icei/nav-tabs/about.dart';
-import 'package:pict_icei/nav-tabs/author_info.dart';
+import 'package:pict_icei/nav-tabs/contact.dart';
 import 'package:pict_icei/nav-tabs/committee.dart';
 import 'package:pict_icei/nav-tabs/developers.dart';
 import 'package:pict_icei/nav-tabs/faq.dart';
@@ -22,7 +22,7 @@ class AppDrawer extends StatelessWidget {
             height: 120.0,
             child: const DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.lightGreen,
+                color: Colors.blue,
               ),
               child: Center(
                   child: Text(
@@ -101,13 +101,13 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.description),
-            title: const Text('Author Info'),
+            leading: Icon(Icons.phone),
+            title: const Text('Contact Us'),
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => AuthorInfo(),
+                  builder: (context) => ContactUs(),
                 ),
               );
             },

@@ -6,9 +6,24 @@ class Program extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Program",
+          style: TextStyle(
+            fontFamily: 'Raleway',
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.black54,
+      ),
       body: Container(
         child: Center(
-          child: Text("Program"),
+          child: Text(
+            "Details Coming Soon",
+            style: TextStyle(
+              fontFamily: 'Raleway',
+            ),
+          ),
         ),
       ),
     );
