@@ -35,7 +35,7 @@ class Tab3 extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.blue,
+        color: Colors.blue[200],
         borderRadius: BorderRadius.circular(20),
       ),
       child: Padding(
@@ -46,9 +46,10 @@ class Tab3 extends StatelessWidget {
             Text(
               title,
               style: TextStyle(
-                  fontFamily: 'Raleway',
-                  fontSize: 20,
-                  fontWeight: FontWeight.w400),
+                fontFamily: 'Raleway',
+                fontSize: 20,
+                fontWeight: FontWeight.w400,
+              ),
             ),
             SizedBox(height: height),
             Text(

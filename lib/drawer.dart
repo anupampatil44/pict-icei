@@ -6,6 +6,7 @@ import 'package:pict_icei/nav-tabs/developers.dart';
 import 'package:pict_icei/nav-tabs/faq.dart';
 import 'package:pict_icei/nav-tabs/icei_history.dart';
 import 'package:pict_icei/nav-tabs/program.dart';
+import 'package:pict_icei/nav-tabs/registrationFees.dart';
 import 'package:pict_icei/nav-tabs/sponsors.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -28,9 +29,7 @@ class AppDrawer extends StatelessWidget {
                   child: Text(
                 'ICEI-2022',
                 style: TextStyle(
-                  fontSize: 30,
-                  fontFamily: 'Raleway',
-                ),
+                    fontSize: 30, fontFamily: 'Raleway', color: Colors.white),
               )),
             ),
           ),
@@ -65,6 +64,18 @@ class AppDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
+            leading: Icon(Icons.attach_money),
+            title: const Text('Sponsors'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Sponsors(),
+                ),
+              );
+            },
+          ),
+          ListTile(
             leading: Icon(Icons.groups),
             title: const Text('Committee'),
             onTap: () {
@@ -76,17 +87,11 @@ class AppDrawer extends StatelessWidget {
               );
             },
           ),
-          ListTile(
-            leading: Icon(Icons.attach_money),
-            title: const Text('Sponsors'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Sponsors(),
-                ),
-              );
-            },
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.0),
+            child: Divider(
+              thickness: 1.5,
+            ),
           ),
           ListTile(
             leading: Icon(Icons.event),
@@ -101,16 +106,22 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.phone),
-            title: const Text('Contact Us'),
+            leading: Icon(Icons.app_registration),
+            title: const Text('Registration Fees'),
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ContactUs(),
+                  builder: (context) => RegistrationFees(),
                 ),
               );
             },
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.0),
+            child: Divider(
+              thickness: 1.5,
+            ),
           ),
           ListTile(
             leading: Icon(Icons.help_outline),
@@ -120,6 +131,18 @@ class AppDrawer extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => FAQ(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.phone),
+            title: const Text('Contact Us'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ContactUs(),
                 ),
               );
             },
