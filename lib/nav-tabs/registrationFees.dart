@@ -17,6 +17,7 @@ class RegistrationFees extends StatelessWidget {
         backgroundColor: Colors.black54,
       ),
       body: ListView(
+        physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
         children: [
           Padding(
             padding: const EdgeInsets.fromLTRB(5, 12, 5, 0),

@@ -14,7 +14,12 @@ class Tab3 extends StatelessWidget {
             SizedBox(height: mediaQuery.height * 0.02),
             Text(
               "Schedules Page",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(decoration: TextDecoration.underline,
+                decorationStyle: TextDecorationStyle.solid,
+                decorationColor: Colors.lightBlue,
+                decorationThickness: 3,
+                fontFamily: 'Raleway',
+                fontSize: 22,),
             ),
             SizedBox(height: mediaQuery.height * 0.05),
             scheduleContainer("Problem Submission Deadline", "October 10, 2021",
@@ -35,7 +40,7 @@ class Tab3 extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.blue[200],
+        color: Colors.lightBlue,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Padding(

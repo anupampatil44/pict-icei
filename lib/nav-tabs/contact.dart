@@ -21,6 +21,7 @@ class ContactUs extends StatelessWidget {
       ),
       body: SafeArea(
         child: ListView(
+          physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
           padding: const EdgeInsets.all(20),
           children: [
             SizedBox(height: 20),

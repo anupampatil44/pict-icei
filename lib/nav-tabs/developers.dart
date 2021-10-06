@@ -27,6 +27,7 @@ class Developers extends StatelessWidget {
         backgroundColor: Colors.black54,
       ),
       body: ListView.builder(
+        physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
         itemCount: developers.length,
         padding: EdgeInsets.symmetric(
           horizontal: 20,

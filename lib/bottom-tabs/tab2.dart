@@ -1,293 +1,682 @@
 import 'package:flutter/material.dart';
-import 'package:pict_icei/pages/gallery.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Tab2 extends StatelessWidget {
   const Tab2({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: ListView(
-        padding: EdgeInsets.only(top: 20),
-        physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-        children: [Center(child: Text("ABOUT PUNE",style: TextStyle(
-          fontSize: 22,
-          fontFamily: "Raleway",
-          fontWeight: FontWeight.bold,),)
-        ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0, 7, 0, 0),
-            child: Center(child: Text("Check out gallery of Pune\'s famous places",style: TextStyle(
-              fontFamily: "Raleway",),)
-            ),
-          ),
-        Container(
-          margin: EdgeInsets.all(5.0),
-          height: 295.0,
-          child: GridView(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 1,
-              ),
-              // padding: EdgeInsets.only(left: 5,right: 5),
-              scrollDirection: Axis.horizontal,
-              physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-              shrinkWrap: true,
-              children:<Widget>[
-                Center(
-                  child: GestureDetector(
-
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (_) {
-                              return FullScreenImage(
-                                imageUrl:
-                                './assets/aboutpune/Dagadusheth_Ganpati.png',
-                                tag: "i1",
-                              );
-                            }));
-                      },
-
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Hero(
-                          tag: "i1",
-                          child: InteractiveViewer(
-                            child: new Image.asset('./assets/aboutpune/Dagadusheth_Ganpati.png',),
-                          ),
-                        ),
-                      )
-                  ),
-                ),
-                Center(
-                  child: GestureDetector(
-
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (_) {
-                              return FullScreenImage(
-                                imageUrl:
-                                './assets/aboutpune/2-Savitribai_Phule_University_Main_Building.jpg',
-                                tag: "i1",
-                              );
-                            }));
-                      },
-
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Hero(
-                          tag: "i1",
-                          child: InteractiveViewer(
-                            child: new Image.asset('./assets/aboutpune/2-Savitribai_Phule_University_Main_Building.jpg'),
-                          ),
-                        ),
-                      )
-                  ),
-                ),
-                Center(
-                  child: GestureDetector(
-
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (_) {
-                              return FullScreenImage(
-                                imageUrl:
-                                'assets/placeholder.png',
-                                tag: "i1",
-                              );
-                            }));
-                      },
-
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Hero(
-                          tag: "i1",
-                          child: InteractiveViewer(
-                            child: new Image.asset('assets/placeholder.png'),
-                          ),
-                        ),
-                      )
-                  ),
-                ),
-                Center(
-                  child: GestureDetector(
-
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (_) {
-                              return FullScreenImage(
-                                imageUrl:
-                                'assets/placeholder.png',
-                                tag: "i1",
-                              );
-                            }));
-                      },
-
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Hero(
-                          tag: "i1",
-                          child: InteractiveViewer(
-                            child: new Image.asset('assets/placeholder.png',),
-                          ),
-                        ),
-                      )
-                  ),
-                ),
-              ]),
-        ),
-          Center(child: Text("Recent Events",style: TextStyle(
-            fontSize: 22,
-            fontFamily: "Raleway",
-            fontWeight: FontWeight.bold,),)),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0, 7, 0, 0),
-            child: Center(child: Text("Check our gallery from the recent events",style: TextStyle(
-              fontFamily: "Raleway",),)
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.all(5.0),
-            height: 295.0,
-            child: GridView(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 1,
-            ),
-                padding: EdgeInsets.all(1),
-                scrollDirection: Axis.horizontal,
-                physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-                shrinkWrap: true,
-                children:<Widget>[
-                  Center(
-                    child: GestureDetector(
-
-                        onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) {
-                                return FullScreenImage(
-                                  imageUrl:
-                                  './assets/gallery/4.png',
-                                  tag: "i1",
-                                );
-                              }));
-                        },
-
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Hero(
-                            tag: "i1",
-                            child: InteractiveViewer(
-                              child: new Image.asset('./assets/gallery/4.png'),
-                            ),
-                          ),
-                        )
-                    ),
-                  ),
-                  Center(
-                    child: GestureDetector(
-
-                        onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) {
-                                return FullScreenImage(
-                                  imageUrl:
-                                  './assets/gallery/2.jpg',
-                                  tag: "i1",
-                                );
-                              }));
-                        },
-
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Hero(
-                            tag: "i1",
-                            child: InteractiveViewer(
-                              child: new Image.asset('./assets/gallery/2.jpg'),
-                            ),
-                          ),
-                        )
-                    ),
-                  ),
-                  Center(
-                    child: GestureDetector(
-
-                        onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) {
-                                return FullScreenImage(
-                                  imageUrl:
-                                  'assets/placeholder.png',
-                                  tag: "i1",
-                                );
-                              }));
-                        },
-
-                        child: Hero(
-                          tag: "i1",
-                          child: InteractiveViewer(
-                            child: new Image.asset('assets/placeholder.png'),
-                          ),
-                        )
-                    ),
-                  ),
-                  Center(
-                    child: GestureDetector(
-
-                        onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) {
-                                return FullScreenImage(
-                                  imageUrl:
-                                  'assets/placeholder.png',
-                                  tag: "i1",
-                                );
-                              }));
-                        },
-
-                        child: Hero(
-                          tag: "i1",
-                          child: InteractiveViewer(
-                            child: new Image.asset('assets/placeholder.png',),
-                          ),
-                        )
-                    ),
-                  ),
-                ]),
-          )
-      ],
-      ),
-    );
+  launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url, forceWebView: false);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
-}
-
-class FullScreenImage extends StatelessWidget {
-  final String imageUrl;
-  final String tag;
-
-  const FullScreenImage({Key? key, required this.imageUrl, required this.tag}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black87,
-      body: GestureDetector(
+    return SafeArea(
+      child: Container(
         child: Center(
-          child: Hero(
-            tag: tag,
-            child: InteractiveViewer(
-              child: Image.asset(this.imageUrl,
-                fit: BoxFit.fitWidth,
-                height: double.infinity,
-                width: double.infinity,
-                alignment: Alignment.center,
-              ),
+          child: ListView(
+              padding: EdgeInsets.only(top: 20, bottom: 20, left: 15, right: 15),
+            physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+            children: [Center(child: Text("Submissions",style: TextStyle(
+              decoration: TextDecoration.underline,
+              decorationStyle: TextDecorationStyle.solid,
+              decorationColor: Colors.lightBlue,
+              decorationThickness: 3,
+              fontFamily: 'Raleway',
+              fontSize: 22,
+              fontWeight: FontWeight.bold,),)
             ),
-          ),
-        ),
-        onTap: () {
-          Navigator.pop(context);
-        },
-      ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 7, 0, 0),
+                child: Center(child: Text("CALL FOR PAPER",style: TextStyle(
+                  fontFamily: "Raleway",decoration: TextDecoration.underline,decorationColor: Colors.lightBlue,
+                  decorationThickness: 2,fontSize: 20,),)
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child: Center(
+                  child: InteractiveViewer(
+                    child: new Image.asset('./assets/call-for-paper.jpg'),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child: Center(child: Text("Paper Submission Link:",style: TextStyle(
+                  fontFamily: "Raleway",decoration: TextDecoration.underline,decorationColor: Colors.lightBlue,
+                  decorationThickness: 2,fontSize: 20,),
+                  textAlign: TextAlign.center,)
+                ),
+              ),
+              Center(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      const url = 'https://easychair.org/conferences/?conf=icei2022';
+                      launchURL(url);
+                    },
+                    child: Text('Visit Submission Link'),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.lightBlue,
+                      padding: const EdgeInsets.all(10),
+                    ),
+                  )),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 7, 0, 0),
+                child: Center(child: Text("SCOPE OF CONFERENCE",style: TextStyle(
+                  fontFamily: "Raleway",decoration: TextDecoration.underline,decorationColor: Colors.lightBlue,
+                  decorationThickness: 2,fontSize: 20),)
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child: Center(child: Text("Track 1 - Big Data Storage and Analytics",style: TextStyle(
+                  fontFamily: "Raleway",decoration: TextDecoration.underline,decorationColor: Colors.lightBlue,
+                  decorationThickness: 2,fontSize: 20,),
+                  textAlign: TextAlign.center,)
+                ),
+              ),
 
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                    Text("- Data Mining and Knowledge Discovery",style: TextStyle(
+                    fontFamily: "Raleway",fontSize: 15,),
+                    textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Data Warehousing and Visualization",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Big Data Management",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Information Security",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Blockchain interoperability, Consensus mechanisms",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child: Center(child: Text("Track 2 - Artificial Intelligence and Machine Learning",style: TextStyle(
+                  fontFamily: "Raleway",decoration: TextDecoration.underline,decorationColor: Colors.lightBlue,
+                  decorationThickness: 2,fontSize: 20,),
+                  textAlign: TextAlign.center,)
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Agents and Artificial Intelligence",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Trustworthy Machine Learning and Evolutionary Computation",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Neural Network Models, Deep Reinforcement Learning",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Scalable and Real-Time Machine Learning",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Multidisciplinary Natural Language Processing",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Intelligent Robotics",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- AI/ML in information Security",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child: Center(child: Text("Track 3 -Cognitive Systems, Vision and Perception",style: TextStyle(
+                  fontFamily: "Raleway",decoration: TextDecoration.underline,decorationColor: Colors.lightBlue,
+                  decorationThickness: 2,fontSize: 20,),
+                  textAlign: TextAlign.center,)
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Computer Vision and Pattern Recognition",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Homography, Camera-Stereo Geometry, and Superresolution",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Attention Models and Generative Models in Vision",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Reinforcement Learning in Vision",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Cross Reality",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Key Management and Distribution",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Social Network Exploration",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Multimodal Interface",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Multimedia & Cognitive Informatics",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Pervasive Computing and Ambient Intelligence",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child: Center(child: Text("Track 4 - Embedded Systems and Internet of Things",style: TextStyle(
+                  fontFamily: "Raleway",decoration: TextDecoration.underline,decorationColor: Colors.lightBlue,
+                  decorationThickness: 2,fontSize: 20,),
+                  textAlign: TextAlign.center,)
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Future IoT Technologies, Architecture, Interoperability, Edge",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- IoT Resource, Security, and Privacy Management, Self Adaption",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- LSI and VHDL Architecture, Design System On Chip Design for Variability, Reliability, Fault Tolerance, Test, and others",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child: Center(child: Text("Track 5 - Soft Computing",style: TextStyle(
+                  fontFamily: "Raleway",decoration: TextDecoration.underline,decorationColor: Colors.lightBlue,
+                  decorationThickness: 2,fontSize: 20,),
+                  textAlign: TextAlign.center,)
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Ant Colony Optimization and Swarm Intelligence",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Artificial Immune Systems",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Particle Swarm Optimization",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Swarm Intelligence",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Evolutionary Systems",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Genetic Algorithm",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Fuzzy logic and Systems",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Transfer learning",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Fuzzy Reconfigurable Systems",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Morphic computing",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child: Center(child: Text("Track 6 - Computational Intelligence",style: TextStyle(
+                  fontFamily: "Raleway",decoration: TextDecoration.underline,decorationColor: Colors.lightBlue,
+                  decorationThickness: 2,fontSize: 20,),
+                  textAlign: TextAlign.center,)
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Computational Intelligence in Bioinformatics and Computational Biology",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Computational Intelligence Multiagent System",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Ontology-based Intelligent Systems",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Quantum Computing",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Intelligent systems (tutoring, information retrieval, image processing, hybrid)",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Multidisciplinary applications of computational intelligence in Water, Autonomous vehicles,Clean energy, Healthcare, Agriculture, infrastructure, Defence related Technologies",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Bio Mechatronics and Rehabilitation Engineering",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Renewable systems",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child: Center(child: Text("Track 7 - Advanced Communication Technologies",style: TextStyle(
+                  fontFamily: "Raleway",decoration: TextDecoration.underline,decorationColor: Colors.lightBlue,
+                  decorationThickness: 2,fontSize: 20,),
+                  textAlign: TextAlign.center,)
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Wireless and Mobile Communications",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Optical Fiber Communication and Optical Networks",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Satellite Communication Networks",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Vehicle Communication Systems, Remotely Operated Vehicles (ROV)",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Novel Microwave Theories and Technologies",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Sustainable Communication Technologies",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Cognitive Radio Networks",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Green Communication",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child: Center(child: Text("SUBMISSION GUIDELINES",style: TextStyle(
+                  fontFamily: "Raleway",decoration: TextDecoration.underline,decorationColor: Colors.lightBlue,
+                  decorationThickness: 2,fontSize: 20,),
+                  textAlign: TextAlign.center,)
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("ICEI Conference is seeking original unpublished technical papers not currently under review by any other journal, magazine, or conference.\n\nAll accepted and presented papers will be published in Recent Advances in Electrical & Electronic Engineering (Web of Science, ESCI, Scopus indexed), Springer LNNS (Scopus indexed), Springer LNCS Transaction in Computer Science after another round of review.The participation certificate will be given to only registered authors and presentation certificates will be given to the author who has registered and presented the paper.\n\nTo ensure publication of paper at least one author should register and present paper in the conference.",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child: Center(child: Text("CALL FOR WORKSHOP",style: TextStyle(
+                  fontFamily: "Raleway",decoration: TextDecoration.underline,decorationColor: Colors.lightBlue,
+                  decorationThickness: 2,fontSize: 20,),
+                  textAlign: TextAlign.center,)
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("The ICEI-2022 invites one-day (4 hours) or two-day (8 hours) proposals on new and emerging topics within the scope of the conference theme of emerging trends and innovations in Information and Communication Technology (ICT). Workshops are an integral part of the program of ICEI-2022. They provide participants with broad and comprehensive overviews of emerging trends in the domain.",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Title\n- Abstract\n- Objectives and motivation\n- Intended audience\n- Prior history of the workshop conduction and number of past attendees, if applicable\n- Workshop Outline\n- Short biography of the instructor(s)\n\nPlease submit your tutorial proposals as a single PDF file (maximum 5 pages, double-space) by email to conference@pict.edu with the heading “ICEI-2022 Workshop Submission”.",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child: RichText(text: TextSpan(text: "Proposal Submission Deadline: ",
+                    style: TextStyle(fontFamily: 'Raleway',fontWeight: FontWeight.bold, fontSize: 15),
+                    children: <TextSpan>[
+                      TextSpan(text: '30th October 2021', style: TextStyle( fontWeight: FontWeight.normal,fontSize: 13,fontFamily: 'Raleway',))]),),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child: Center(child: Text("CALL FOR TUTORIAL",style: TextStyle(
+                  fontFamily: "Raleway",decoration: TextDecoration.underline,decorationColor: Colors.lightBlue,
+                  decorationThickness: 2,fontSize: 20,),
+                  textAlign: TextAlign.center,)
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("ICEI-2022 solicits half-day (3 hours) or full-day (6 hours) tutorial proposals on emerging trends and innovations in Information and Communication Technology (ICT), Tutorials are an integral part of the program of ICEI-2022. They provide participants with broad and comprehensive overviews of emerging fields in ICT.",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Title\n- Abstract\n- Objectives and motivation\n- Intended audience\n- Prior history of the workshop conduction and number of past attendees, if applicable\n- Tutorial Outline\n- Short biography of the instructor(s)\n",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child: RichText(text: TextSpan(text: "IMPORTANT DATES-\n\n",
+                    style: TextStyle(fontFamily: 'Raleway',fontWeight: FontWeight.bold, fontSize: 15),
+                    children: <TextSpan>[
+                      TextSpan(text: 'Please submit your tutorial proposals as a single PDF file (maximum 5 pages, double-space) by email to conference@pict.edu with the heading “ICEI-2022 Tutorial Submission”.', style: TextStyle( fontWeight: FontWeight.normal,fontSize: 15,fontFamily: 'Raleway',)),
+                      TextSpan(text: '\n\nProposal Submission Deadline: ', style: TextStyle( fontWeight: FontWeight.bold,fontSize: 15,fontFamily: 'Raleway',)),
+                      TextSpan(text: '30th October 2021', style: TextStyle( fontWeight: FontWeight.normal,fontSize: 15,fontFamily: 'Raleway',))]),),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child: Center(child: Text("CALL FOR INDUSTRY PANEL",style: TextStyle(
+                  fontFamily: "Raleway",decoration: TextDecoration.underline,decorationColor: Colors.lightBlue,
+                  decorationThickness: 2,fontSize: 20,),
+                  textAlign: TextAlign.center,)
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("The ICEI-2022 invites 1 hours to 2 hours panel proposals on future and emerging topics within the scope of the conference theme of emerging trends and innovations in Information and Communication Technology (ICT).",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child:
+
+                Text("- Title of the panel\n- Names, addresses, and short biographies of the organizers\n- A brief description including motivation and background along with take away messages.\n- Names, affiliations, and short biographies of proposed 3 to 5 panelists\n- Planned format of the panel, such as planned presenters, topics, etc.\n- Questions to be addressed to the panelist\n",style: TextStyle(
+                  fontFamily: "Raleway",fontSize: 15,),
+                  textAlign: TextAlign.left,),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                child: RichText(text: TextSpan(text: "IMPORTANT DATES-\n\n",
+                    style: TextStyle(fontFamily: 'Raleway',fontWeight: FontWeight.bold, fontSize: 15),
+                    children: <TextSpan>[
+                      TextSpan(text: 'Please submit your panel proposals as a single PDF file (maximum 8 pages, double-space) by email to conference@pict.edu with the heading “ICEI-2022 Panel Submission”.', style: TextStyle( fontWeight: FontWeight.normal,fontSize: 15,fontFamily: 'Raleway',)),
+                      TextSpan(text: '\n\nProposal Submission Deadline: ', style: TextStyle( fontWeight: FontWeight.bold,fontSize: 15,fontFamily: 'Raleway',)),
+                      TextSpan(text: '30th October 2021', style: TextStyle( fontWeight: FontWeight.normal,fontSize: 15,fontFamily: 'Raleway',))]),),
+              ),
+
+
+
+            ]),
+        )
+      ),
     );
   }
 }
+

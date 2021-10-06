@@ -18,6 +18,7 @@ class Committee extends StatelessWidget {
           backgroundColor: Colors.black54,
         ),
         body: ListView(
+          physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
           padding: EdgeInsets.symmetric(
             vertical: 20,
           ),

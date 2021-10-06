@@ -8,6 +8,7 @@ import 'package:pict_icei/nav-tabs/icei_history.dart';
 import 'package:pict_icei/nav-tabs/program.dart';
 import 'package:pict_icei/nav-tabs/registrationFees.dart';
 import 'package:pict_icei/nav-tabs/sponsors.dart';
+import 'package:pict_icei/nav-tabs/gallery.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key? key}) : super(key: key);
@@ -53,6 +54,18 @@ class AppDrawer extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => ICEIHistory(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.image_outlined),
+            title: const Text('Gallery'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => gallerylayout(),
                 ),
               );
             },

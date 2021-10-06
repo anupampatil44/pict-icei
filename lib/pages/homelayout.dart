@@ -62,8 +62,8 @@ class _homeState extends State<homelayout> {
             inactiveColor: Colors.black54,
           ),
           BottomNavyBarItem(
-            title: Text('Gallery'),
-            icon: Icon(Icons.photo_album),
+            title: Text('Submissions'),
+            icon: Icon(Icons.work_outline_sharp),
             textAlign: TextAlign.center,
             activeColor: Colors.lightBlue,
             inactiveColor: Colors.black54,

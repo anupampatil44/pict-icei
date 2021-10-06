@@ -36,22 +36,150 @@ class _Tab4State extends State<Tab4> {
     final mediaQuery = MediaQuery.of(context).size;
     return Container(
       child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+        child: ListView(
+          physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+          padding: EdgeInsets.symmetric(
+            vertical: 20,
+            horizontal: 20
+          ),
           children: [
-            SizedBox(height: mediaQuery.height * 0.05),
-            Text(
-              'Downloads Page',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: mediaQuery.height * 0.05),
-            ElevatedButton(
-              child: Text('Call For Paper'),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.lightBlue,
-                padding: const EdgeInsets.all(20),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0,20,0,0),
+              child: Center(
+                child: Text(
+                  'Downloads Page',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold,fontFamily: "Raleway"),
+                ),
               ),
-              onPressed: () async {
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0,20,0,20),
+              child: Container(
+                width: mediaQuery.width * 0.50,
+                height: mediaQuery.height * 0.10,
+                child: Card(
+                  elevation: 5,
+
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: InkWell(
+                    child: Center(child: Text('Call For Papers',style: TextStyle(
+                      fontFamily: 'Raleway',
+                    ),)),
+                    // style: ElevatedButton.styleFrom(
+                    //   primary: Colors.lightBlue,
+                    //   padding: const EdgeInsets.all(20),
+                    // ),
+                    onTap: () async {
+                      final path = 'assets/downloads_tab/call-for-paper.pdf';
+                      final file = await loadAsset(path);
+                      print("Path : " + path);
+                      await Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => PDFViewer(
+                            file: file,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0,20,0,20),
+          child: Container(
+            width: mediaQuery.width * 0.50,
+            height: mediaQuery.height * 0.10,
+            child: Card(
+              elevation: 5,
+
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: InkWell(
+                child: Center(child: Text('Conference Brochure',style: TextStyle(
+                  fontFamily: 'Raleway',
+                ),)),
+                // style: ElevatedButton.styleFrom(
+                //   primary: Colors.lightBlue,
+                //   padding: const EdgeInsets.all(20),
+                // ),
+                onTap: () async {
+                  final path = 'assets/downloads_tab/call-for-paper.pdf';
+                  final file = await loadAsset(path);
+                  print("Path : " + path);
+                  await Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => PDFViewer(
+                        file: file,
+                      ),
+                    ),
+                  );
+
+                },
+              ),
+            ),
+          ),
+        ),
+
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0,20,0,20),
+              child: Container(
+                width: mediaQuery.width * 0.50,
+                height: mediaQuery.height * 0.10,
+                child: Card(
+                  elevation: 5,
+
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: InkWell(
+                    child: Center(child: Text('Registration Form',style: TextStyle(
+                      fontFamily: 'Raleway',
+                    ),)),
+                    // style: ElevatedButton.styleFrom(
+                    //   primary: Colors.lightBlue,
+                    //   padding: const EdgeInsets.all(20),
+                    // ),
+                    onTap: () async {
+                      final path = 'assets/downloads_tab/call-for-paper.pdf';
+                      final file = await loadAsset(path);
+                      print("Path : " + path);
+                      await Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => PDFViewer(
+                            file: file,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ),
+
+      Padding(
+        padding: const EdgeInsets.fromLTRB(0,20,0,20),
+        child: Container(
+          width: mediaQuery.width * 0.50,
+          height: mediaQuery.height * 0.10,
+          child: Card(
+            elevation: 5,
+
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: InkWell(
+              child: Center(child: Text('Copyright Form',style: TextStyle(
+                fontFamily: 'Raleway',
+              ),)),
+              // style: ElevatedButton.styleFrom(
+              //   primary: Colors.lightBlue,
+              //   padding: const EdgeInsets.all(20),
+              // ),
+              onTap: () async {
                 final path = 'assets/downloads_tab/call-for-paper.pdf';
                 final file = await loadAsset(path);
                 print("Path : " + path);
@@ -64,33 +192,9 @@ class _Tab4State extends State<Tab4> {
                 );
               },
             ),
-            SizedBox(height: mediaQuery.height * 0.05),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Conference Brochure'),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.lightBlue,
-                padding: const EdgeInsets.all(20),
-              ),
-            ),
-            SizedBox(height: mediaQuery.height * 0.05),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Registration Form'),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.lightBlue,
-                padding: const EdgeInsets.all(20),
-              ),
-            ),
-            SizedBox(height: mediaQuery.height * 0.05),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Copyright Form'),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.lightBlue,
-                padding: const EdgeInsets.all(20),
-              ),
-            ),
+          ),
+        ),
+      ),
           ],
         ),
       ),

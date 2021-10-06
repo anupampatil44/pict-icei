@@ -3,7 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:pict_icei/pages/homelayout.dart';
 import 'package:pict_icei/pages/splashscreen.dart';
 
-void main() {
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then((value) =>
   runApp(MaterialApp(
     initialRoute: '/',
     theme: ThemeData(
@@ -20,5 +22,5 @@ void main() {
     routes: {
       '/home': (context) => homelayout(),
     },
-  ));
+  )));
 }
