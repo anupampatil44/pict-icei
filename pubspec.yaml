@@ -42,6 +42,9 @@ dependencies:
 
   # pdf-viewer
   flutter_pdfview: ^1.2.1
+  
+  # countdown on home page
+  date_count_down: ^1.0.2
 
   # path
   path: ^1.8.0
