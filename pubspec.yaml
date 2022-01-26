@@ -58,6 +58,7 @@ dependencies:
 
   #text animations:
   delayed_display: ^2.0.0
+  animated_text_kit: ^4.2.1
 
 dev_dependencies:
   flutter_test:
