@@ -40,8 +40,9 @@ class _homeState extends State<homelayout> {
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.transparent,
       ),
+      extendBodyBehindAppBar: true,
       drawer: AppDrawer(),
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavyBar(
