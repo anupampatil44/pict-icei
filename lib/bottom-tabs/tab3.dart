@@ -1,3 +1,6 @@
+import 'dart:ui';
+
+//import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 
 class Tab3 extends StatelessWidget {
@@ -7,32 +10,68 @@ class Tab3 extends StatelessWidget {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
     return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          children: [
-            SizedBox(height: mediaQuery.height * 0.02),
-            Text(
-              "Schedules Page",
-              style: TextStyle(decoration: TextDecoration.underline,
-                decorationStyle: TextDecorationStyle.solid,
-                decorationColor: Colors.lightBlue,
-                decorationThickness: 3,
-                fontFamily: 'Raleway',
-                fontSize: 22,),
-            ),
-            SizedBox(height: mediaQuery.height * 0.05),
-            scheduleContainer("Problem Submission Deadline", "October 10, 2021",
-                mediaQuery.height * 0.05),
-            SizedBox(height: mediaQuery.height * 0.05),
-            scheduleContainer("Acceptance Notification", "November 12, 2021",
-                mediaQuery.height * 0.05),
-            SizedBox(height: mediaQuery.height * 0.05),
-            scheduleContainer("Camera Ready Paper Submission",
-                "December 20, 2021", mediaQuery.height * 0.05)
-          ],
+      child: Container(
+        constraints:BoxConstraints.expand(),
+        decoration: BoxDecoration(
+          image:DecorationImage(
+             colorFilter: new ColorFilter.mode(Colors.black.withOpacity(1), BlendMode.dstATop),
+            image: AssetImage('assets/pict_2.jpeg'),
+            //NetworkImage('https://icei-app.s3.filebase.com/pict_2.jpeg'),
+            fit:BoxFit.cover
+          ) ,
         ),
-      ),
+        //child: DelayedDisplay(
+          //delay:Duration(seconds:1),
+          child: BackdropFilter(
+            //filter: ImageFilter.blur(sigmaX: 2,sigmaY: 1),
+            filter:ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+            child: Container(
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  children: [
+                    SizedBox(height: mediaQuery.height * 0.18),
+                    Container(
+                      padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                      height: 50.0,
+                      width: double.infinity,
+                      //color:Colors.white.withOpacity(0.6),
+                      child: Text(
+                        "SCHEDULES PAGE",
+                        style: TextStyle(
+                          // decoration: TextDecoration.underline,
+                          // decorationStyle: TextDecorationStyle.solid,
+                          // decorationColor: Colors.lightBlue,
+                          // decorationThickness: 3,
+                          color: Colors.black,
+                          //color: Colors.white,
+                          fontWeight: FontWeight.w800,
+                          fontFamily: 'Raleway',
+                          fontSize: 25,),
+                          textAlign: TextAlign.center,
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        //color:Colors.black.withOpacity(0.5),
+                        color:Colors.white.withOpacity(0.5),
+                      ),
+                    ),
+                    SizedBox(height: mediaQuery.height * 0.05),
+                    scheduleContainer("Problem Submission Deadline", "December 15, 2021",
+                        mediaQuery.height * 0.05),
+                    SizedBox(height: mediaQuery.height * 0.05),
+                    scheduleContainer("Acceptance Notification", "January 25, 2022",
+                        mediaQuery.height * 0.05),
+                    SizedBox(height: mediaQuery.height * 0.05),
+                    scheduleContainer("Camera Ready Paper Submission",
+                        "January 30, 2022", mediaQuery.height * 0.05)
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      //),
     );
   }
 
@@ -40,8 +79,9 @@ class Tab3 extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.lightBlue,
-        borderRadius: BorderRadius.circular(20),
+        color: Colors.white.withOpacity(0.5),
+        //color: Colors.black.withOpacity(0.6),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -53,7 +93,9 @@ class Tab3 extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'Raleway',
                 fontSize: 20,
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.w500,
+                //color: Colors.white,
+                color: Colors.black,
               ),
             ),
             SizedBox(height: height),
@@ -62,6 +104,8 @@ class Tab3 extends StatelessWidget {
               style: TextStyle(
                   fontFamily: 'Raleway',
                   fontSize: 18,
+                  //color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.bold),
             ),
           ],
