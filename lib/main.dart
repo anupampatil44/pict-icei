@@ -8,15 +8,16 @@ Future<void> main() async{
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then((value) =>
   runApp(MaterialApp(
     initialRoute: '/',
-    theme: ThemeData(
-      brightness: Brightness.light,
-      /* light theme settings */
-    ),
-    darkTheme: ThemeData(
-      brightness: Brightness.dark,
-      /* dark theme settings */
-    ),
-    themeMode: ThemeMode.system,
+    // theme: ThemeData(
+    //   brightness: Brightness.light,
+    //   /* light theme settings */
+    // ),
+    // darkTheme: ThemeData(
+    //   brightness: Brightness.dark,
+    //   /* dark theme settings */
+    // ),
+    theme: ThemeData.dark(),
+    //themeMode: ThemeMode.system,
     home: splashscreen(),
     debugShowCheckedModeBanner: false,
     routes: {
