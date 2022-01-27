@@ -1,6 +1,7 @@
 //import 'package:cached_network_image/cached_network_image.dart';
 import 'dart:ui';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -78,7 +79,8 @@ class Tab2 extends StatelessWidget {
                         //   child: Image.network('https://icei-app.s3.filebase.com/call-for-paper.jpg'),
                         // ),
                         child:
-                        Image.network('https://icei-app.s3.filebase.com/call-for-paper-min.jpg'),
+                        CachedNetworkImage(imageUrl: 'https://icei-app.s3.filebase.com/call-for-paper-min.jpg')
+                        // Image.network('https://icei-app.s3.filebase.com/call-for-paper-min.jpg'),
                         // CachedNetworkImage(
                         //         imageUrl: "https://icei-app.s3.filebase.com/call-for-paper.jpg",
                         //         progressIndicatorBuilder: (context, url, downloadProgress) => 

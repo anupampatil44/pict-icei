@@ -46,6 +46,8 @@ class _homeState extends State<homelayout> {
       drawer: AppDrawer(),
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavyBar(
+        backgroundColor: Colors.transparent,
+        showElevation: false,
         selectedIndex: _selectedIndex,
         onItemSelected: (clickedIndex) async {
           setState(() {
