@@ -1,11 +1,8 @@
-import 'dart:io';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
-
-import 'package:flutter/services.dart';
-import 'package:path/path.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:pict_icei/utils/pdf_viewer.dart';
+import 'package:pict_icei/utils/network_pdf_viewer.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Tab4 extends StatefulWidget {
   const Tab4({Key? key}) : super(key: key);
@@ -14,188 +11,441 @@ class Tab4 extends StatefulWidget {
   _Tab4State createState() => _Tab4State();
 }
 
+// TODO: Registration form and Copyright form
 class _Tab4State extends State<Tab4> {
-  static Future<File> loadAsset(String path) async {
-    final data = await rootBundle.load(path);
-    final bytes = data.buffer.asUint8List();
-
-    return _storeFile(path, bytes);
+  launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url, forceWebView: false);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
+  // static Future<File> loadAsset(String path) async {
+  //   final data = await rootBundle.load(path);
+  //   final bytes = data.buffer.asUint8List();
 
-  static Future<File> _storeFile(String url, List<int> bytes) async {
-    final filename = basename(url);
-    final dir = await getApplicationDocumentsDirectory();
+  //   return _storeFile(path, bytes);
+  // }
 
-    final file = File('${dir.path}/$filename');
-    await file.writeAsBytes(bytes, flush: true);
-    return file;
-  }
+  // static Future<File> _storeFile(String url, List<int> bytes) async {
+  //   final filename = basename(url);
+  //   final dir = await getApplicationDocumentsDirectory();
+
+  //   final file = File('${dir.path}/$filename');
+  //   await file.writeAsBytes(bytes, flush: true);
+  //   return file;
+  // }
 
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context).size;
+    // final mediaQuery = MediaQuery.of(context).size;
     return Container(
-      child: Center(
-        child: ListView(
-          physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-          padding: EdgeInsets.symmetric(
-            vertical: 20,
-            horizontal: 20
-          ),
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0,20,0,0),
-              child: Center(
-                child: Text(
-                  'Downloads Page',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold,fontFamily: "Raleway"),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0,20,0,20),
-              child: Container(
-                width: mediaQuery.width * 0.50,
-                height: mediaQuery.height * 0.10,
-                child: Card(
-                  elevation: 5,
-
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: InkWell(
-                    child: Center(child: Text('Call For Papers',style: TextStyle(
-                      fontFamily: 'Raleway',
-                    ),)),
-                    // style: ElevatedButton.styleFrom(
-                    //   primary: Colors.lightBlue,
-                    //   padding: const EdgeInsets.all(20),
-                    // ),
-                    onTap: () async {
-                      final path = 'assets/downloads_tab/call-for-paper.pdf';
-                      final file = await loadAsset(path);
-                      print("Path : " + path);
-                      await Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => PDFViewer(
-                            file: file,
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ),
-            ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(0,20,0,20),
-          child: Container(
-            width: mediaQuery.width * 0.50,
-            height: mediaQuery.height * 0.10,
-            child: Card(
-              elevation: 5,
-
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: InkWell(
-                child: Center(child: Text('Conference Brochure',style: TextStyle(
-                  fontFamily: 'Raleway',
-                ),)),
-                // style: ElevatedButton.styleFrom(
-                //   primary: Colors.lightBlue,
-                //   padding: const EdgeInsets.all(20),
-                // ),
-                onTap: () async {
-                  final path = 'assets/downloads_tab/call-for-paper.pdf';
-                  final file = await loadAsset(path);
-                  print("Path : " + path);
-                  await Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => PDFViewer(
-                        file: file,
-                      ),
-                    ),
-                  );
-
-                },
-              ),
-            ),
-          ),
-        ),
-
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0,20,0,20),
-              child: Container(
-                width: mediaQuery.width * 0.50,
-                height: mediaQuery.height * 0.10,
-                child: Card(
-                  elevation: 5,
-
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: InkWell(
-                    child: Center(child: Text('Registration Form',style: TextStyle(
-                      fontFamily: 'Raleway',
-                    ),)),
-                    // style: ElevatedButton.styleFrom(
-                    //   primary: Colors.lightBlue,
-                    //   padding: const EdgeInsets.all(20),
-                    // ),
-                    onTap: () async {
-                      final path = 'assets/downloads_tab/call-for-paper.pdf';
-                      final file = await loadAsset(path);
-                      print("Path : " + path);
-                      await Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => PDFViewer(
-                            file: file,
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ),
-            ),
-
-      Padding(
-        padding: const EdgeInsets.fromLTRB(0,20,0,20),
-        child: Container(
-          width: mediaQuery.width * 0.50,
-          height: mediaQuery.height * 0.10,
-          child: Card(
-            elevation: 5,
-
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: InkWell(
-              child: Center(child: Text('Copyright Form',style: TextStyle(
-                fontFamily: 'Raleway',
-              ),)),
-              // style: ElevatedButton.styleFrom(
-              //   primary: Colors.lightBlue,
-              //   padding: const EdgeInsets.all(20),
-              // ),
-              onTap: () async {
-                final path = 'assets/downloads_tab/call-for-paper.pdf';
-                final file = await loadAsset(path);
-                print("Path : " + path);
-                await Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => PDFViewer(
-                      file: file,
-                    ),
-                  ),
-                );
-              },
-            ),
-          ),
-        ),
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage("assets/pict_2.jpeg"), fit: BoxFit.cover),
       ),
-          ],
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
+        child: Center(
+          child: ListView(
+            physics:
+                BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+            children: [
+              SizedBox(
+                height: Scaffold.of(context).appBarMaxHeight!,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                child: InkWell(
+                  child: Container(
+                    height: MediaQuery.of(context).size.width * 0.20,
+                    decoration: BoxDecoration(
+                        // boxShadow: [
+                        //   BoxShadow(
+                        //     color: Colors.blueAccent,
+                        //     offset: const Offset(
+                        //       2.5,
+                        //       2.5,
+                        //     ),
+                        //     blurRadius: 10.0,
+                        //     spreadRadius: 1.0,
+                        //   ),
+                        //   BoxShadow(
+                        //     color: Colors.white,
+                        //     offset: const Offset(0.0, 0.0),
+                        //     blurRadius: 0.0,
+                        //     spreadRadius: 0.0,
+                        //   )
+                        // ],
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white.withOpacity(0.6)),
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                            vertical: 15,
+                          ),
+                          child: Image.asset(
+                            'assets/icons/pdf_icon.png',
+                          ),
+                        ),
+                        Expanded(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Call for Paper",
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Raleway',
+                                fontSize: 25,
+                              ),
+                            ),
+                            Text(
+                              '.pdf file',
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Raleway',
+                                fontSize: 12.5,
+                              ),
+                            ),
+                          ],
+                        ))
+                      ],
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => NewtorkPdfViewer(
+                          link:
+                              'https://icei-app.s3.filebase.com/call-for-paper.pdf',
+                          title: 'Call for Paper',
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                child: InkWell(
+                  child: Container(
+                    height: MediaQuery.of(context).size.width * 0.20,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white.withOpacity(0.6)),
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                            vertical: 15,
+                          ),
+                          child: Image.asset(
+                            'assets/icons/pdf_icon.png',
+                          ),
+                        ),
+                        Expanded(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Conference Brochure",
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Raleway',
+                                fontSize: 25,
+                              ),
+                            ),
+                            Text(
+                              '.pdf file',
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Raleway',
+                                fontSize: 12.5,
+                              ),
+                            ),
+                          ],
+                        ))
+                      ],
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => NewtorkPdfViewer(
+                          link:
+                              'https://icei-app.s3.filebase.com/ICEI_Brochure.pdf',
+                          title: 'Conference Brochure',
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                child: InkWell(
+                  child: Container(
+                    height: MediaQuery.of(context).size.width * 0.20,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white.withOpacity(0.6)),
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                            vertical: 15,
+                          ),
+                          child: Image.asset(
+                            'assets/icons/docx_icon.png',
+                          ),
+                        ),
+                        Expanded(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Template for RAEEE",
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Raleway',
+                                fontSize: 25,
+                              ),
+                            ),
+                            Text(
+                              '.docx file',
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Raleway',
+                                fontSize: 12.5,
+                              ),
+                            ),
+                          ],
+                        ))
+                      ],
+                    ),
+                  ),
+                  onTap: () async {
+                    await launchURL(
+                        'https://icei-app.s3.filebase.com/Template_for_paper.dotx');
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                child: InkWell(
+                  child: Container(
+                    height: MediaQuery.of(context).size.width * 0.20,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white.withOpacity(0.6)),
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                            vertical: 15,
+                          ),
+                          child: Image.asset(
+                            'assets/icons/docx_icon.png',
+                          ),
+                        ),
+                        Expanded(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Template for Springer",
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Raleway',
+                                fontSize: 25,
+                              ),
+                            ),
+                            Text(
+                              '.docx file',
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Raleway',
+                                fontSize: 12.5,
+                              ),
+                            ),
+                          ],
+                        ))
+                      ],
+                    ),
+                  ),
+                  onTap: () async {
+                    await launchURL(
+                        'https://icei-app.s3.filebase.com/templateforspringer.docm');
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                child: InkWell(
+                  child: Container(
+                    height: MediaQuery.of(context).size.width * 0.20,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white.withOpacity(0.6)),
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                            vertical: 15,
+                          ),
+                          child: Image.asset(
+                            'assets/icons/pdf_icon.png',
+                          ),
+                        ),
+                        Expanded(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Registration Form",
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Raleway',
+                                fontSize: 25,
+                              ),
+                            ),
+                            Text(
+                              '.pdf file',
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Raleway',
+                                fontSize: 12.5,
+                              ),
+                            ),
+                          ],
+                        ))
+                      ],
+                    ),
+                  ),
+                  onTap: () {},
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                child: InkWell(
+                  child: Container(
+                    height: MediaQuery.of(context).size.width * 0.20,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white.withOpacity(0.6)),
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                            vertical: 15,
+                          ),
+                          child: Image.asset(
+                            'assets/icons/pdf_icon.png',
+                          ),
+                        ),
+                        Expanded(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Copyright Form",
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Raleway',
+                                fontSize: 25,
+                              ),
+                            ),
+                            Text(
+                              '.pdf file',
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Raleway',
+                                fontSize: 12.5,
+                              ),
+                            ),
+                          ],
+                        ))
+                      ],
+                    ),
+                  ),
+                  onTap: () {},
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                child: InkWell(
+                  child: Container(
+                    height: MediaQuery.of(context).size.width * 0.20,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white.withOpacity(0.6)),
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                            vertical: 15,
+                          ),
+                          child: Image.asset(
+                            'assets/icons/url_icon.png',
+                          ),
+                        ),
+                        Expanded(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Privacy Policy",
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Raleway',
+                                fontSize: 25,
+                              ),
+                            ),
+                            Text(
+                              'url',
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Raleway',
+                                fontSize: 12.5,
+                              ),
+                            ),
+                          ],
+                        ))
+                      ],
+                    ),
+                  ),
+                  onTap: () async {
+                    await launchURL(
+                        'https://www.icei-pict.org/privacy-policy.html');
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
