@@ -14,7 +14,7 @@ class Tab3 extends StatelessWidget {
         constraints:BoxConstraints.expand(),
         decoration: BoxDecoration(
           image:DecorationImage(
-             colorFilter: new ColorFilter.mode(Colors.black.withOpacity(1), BlendMode.dstATop),
+            colorFilter: new ColorFilter.mode(Colors.black.withOpacity(1), BlendMode.dstATop),
             image: AssetImage('assets/pict_2.jpeg'),
             //NetworkImage('https://icei-app.s3.filebase.com/pict_2.jpeg'),
             fit:BoxFit.cover
@@ -53,7 +53,7 @@ class Tab3 extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         //color:Colors.black.withOpacity(0.5),
-                        color:Colors.white.withOpacity(0.5),
+                        color:Colors.white.withOpacity(0.6),
                       ),
                     ),
                     SizedBox(height: mediaQuery.height * 0.05),
@@ -79,7 +79,7 @@ class Tab3 extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.5),
+        color: Colors.white.withOpacity(0.6),
         //color: Colors.black.withOpacity(0.6),
         borderRadius: BorderRadius.circular(10),
       ),
