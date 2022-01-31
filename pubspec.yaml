@@ -3,7 +3,7 @@ description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -25,7 +25,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -40,18 +39,14 @@ dependencies:
   # nav bar
   bottom_navy_bar: ^6.0.0
 
-  # pdf-viewer
-  flutter_pdfview: ^1.2.1
-  
   # countdown on home page
   date_count_down: ^1.0.2
 
   # path
-  path: ^1.8.0
+  # path: ^1.8.0
 
-  
   # path provider
-  path_provider: ^2.0.3
+  # path_provider: ^2.0.3
   url_launcher: ^6.0.10
 
   #webview dependency:
@@ -78,7 +73,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -87,8 +81,6 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
-    - assets/aboutpune/
-    - assets/gallery/
     - assets/sponsors/
     - assets/icons/
   #   - images/a_dot_burr.jpeg

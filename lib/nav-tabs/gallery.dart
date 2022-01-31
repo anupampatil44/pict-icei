@@ -1,8 +1,10 @@
 import 'dart:ui';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:pict_icei/nav-tabs/imageScreen.dart';
+
 import '../models/galleryModel.dart';
 
 final List<String> recentEvents=[
