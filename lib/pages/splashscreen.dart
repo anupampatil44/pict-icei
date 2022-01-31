@@ -1,8 +1,9 @@
+import 'dart:async';
+
+import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-import 'dart:async';
 import 'package:pict_icei/pages/homelayout.dart';
-import 'package:delayed_display/delayed_display.dart';
 
 class splashscreen extends StatefulWidget {
   @override

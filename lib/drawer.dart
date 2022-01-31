@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:pict_icei/nav-tabs/about.dart';
-import 'package:pict_icei/nav-tabs/contact.dart';
 import 'package:pict_icei/nav-tabs/committee.dart';
+import 'package:pict_icei/nav-tabs/contact.dart';
 import 'package:pict_icei/nav-tabs/developers.dart';
 import 'package:pict_icei/nav-tabs/faq.dart';
+import 'package:pict_icei/nav-tabs/gallery.dart';
 import 'package:pict_icei/nav-tabs/icei_history.dart';
 import 'package:pict_icei/nav-tabs/program.dart';
 import 'package:pict_icei/nav-tabs/registrationFees.dart';
 import 'package:pict_icei/nav-tabs/sponsors.dart';
-import 'package:pict_icei/nav-tabs/gallery.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key? key}) : super(key: key);

@@ -3,8 +3,8 @@ import 'dart:ui';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:date_count_down/countdown.dart';
-import 'package:flutter/material.dart';
 import 'package:delayed_display/delayed_display.dart';
+import 'package:flutter/material.dart';
 
 class Tab1 extends StatefulWidget {
   const Tab1({Key? key}) : super(key: key);
