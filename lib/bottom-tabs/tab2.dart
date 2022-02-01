@@ -79,7 +79,13 @@ class Tab2 extends StatelessWidget {
                         //   child: Image.network('https://icei-app.s3.filebase.com/call-for-paper.jpg'),
                         // ),
                         child:
-                        CachedNetworkImage(imageUrl: 'https://icei-app.s3.filebase.com/call-for-paper-min.jpg')
+                        CachedNetworkImage(imageUrl: 'https://icei-app.s3.filebase.com/call-for-paper-min.jpg', 
+                        progressIndicatorBuilder:
+                                    (context, url, downloadProgress) =>
+                                        Center(
+                                          child: CircularProgressIndicator(
+                                              value: downloadProgress.progress),
+                                        ),)
                         // Image.network('https://icei-app.s3.filebase.com/call-for-paper-min.jpg'),
                         // CachedNetworkImage(
                         //         imageUrl: "https://icei-app.s3.filebase.com/call-for-paper.jpg",

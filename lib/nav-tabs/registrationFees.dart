@@ -88,6 +88,12 @@ class RegistrationFees extends StatelessWidget {
                         child: CachedNetworkImage(
                           imageUrl:
                               "https://icei-app.s3.filebase.com/Registration/reg_fees.png",
+                          progressIndicatorBuilder:
+                              (context, url, downloadProgress) =>
+                                  Center(
+                                    child: CircularProgressIndicator(
+                                        value: downloadProgress.progress),
+                                  ),
                           fit: BoxFit.cover,
                           width: 1000.0,
                         ),
@@ -171,6 +177,12 @@ class RegistrationFees extends StatelessWidget {
                     child: CachedNetworkImage(
                       imageUrl:
                           "https://icei-app.s3.filebase.com/Registration/qr_code.jpg",
+                      progressIndicatorBuilder:
+                          (context, url, downloadProgress) =>
+                              Center(
+                                child: CircularProgressIndicator(
+                                    value: downloadProgress.progress),
+                              ),
                       fit: BoxFit.contain,
                       // width: 1000.0,
                     ),

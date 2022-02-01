@@ -24,6 +24,12 @@ class ICEIHistory extends StatelessWidget {
                       imageUrl: item,
                       fit: BoxFit.cover,
                       width: 1000.0,
+                      progressIndicatorBuilder:
+                                    (context, url, downloadProgress) =>
+                                        Center(
+                                          child: CircularProgressIndicator(
+                                              value: downloadProgress.progress),
+                                        ),
                       ),
                     Positioned(
                       bottom: 0.0,
