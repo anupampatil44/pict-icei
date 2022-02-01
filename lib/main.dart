@@ -18,7 +18,7 @@ Future<void> main() async{
     // ),
     theme: ThemeData.dark(),
     //themeMode: ThemeMode.system,
-    home: splashscreen(),
+    home: SplashScreen(),
     debugShowCheckedModeBanner: false,
     routes: {
       '/home': (context) => homelayout(),
