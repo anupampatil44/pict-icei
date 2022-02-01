@@ -22,13 +22,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
-  bottom_navy_bar:
-    dependency: "direct main"
-    description:
-      name: bottom_navy_bar
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "6.0.0"
   cached_network_image:
     dependency: "direct main"
     description:
@@ -490,6 +483,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.2.1"
+  titled_navigation_bar:
+    dependency: "direct main"
+    description:
+      name: titled_navigation_bar
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.0-nullsafety.0"
   typed_data:
     dependency: transitive
     description:

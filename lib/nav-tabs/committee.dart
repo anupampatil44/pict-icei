@@ -26,35 +26,36 @@ class Committee extends StatelessWidget {
         extendBodyBehindAppBar: true,
         body: Container(
           decoration: BoxDecoration(
-          image: DecorationImage(
-              colorFilter: ColorFilter.mode(
-                  Colors.black.withOpacity(0.1), BlendMode.dstATop),
-              image: AssetImage('assets/pict_3.jpg'),
-              fit: BoxFit.cover),
-        ),
-          margin: EdgeInsets.fromLTRB(10,0,10,0),
+            image: DecorationImage(
+                colorFilter: ColorFilter.mode(
+                    Colors.black.withOpacity(0.1), BlendMode.dstATop),
+                image: AssetImage('assets/pict_3.jpg'),
+                fit: BoxFit.cover),
+          ),
+          margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
             child: ListView(
-              physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+              physics: BouncingScrollPhysics(
+                  parent: AlwaysScrollableScrollPhysics()),
               padding: EdgeInsets.symmetric(
                 vertical: 20,
               ),
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height*0.05,
+                  height: MediaQuery.of(context).size.height * 0.05,
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0,0,0,20),
+                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
                   child: Center(
                     child: Text(
                       'Committee',
                       textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Raleway',
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      style: TextStyle(
+                        fontFamily: 'Raleway',
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
@@ -75,7 +76,7 @@ class Committee extends StatelessWidget {
                   color: Colors.white,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height*0.005,
+                  height: MediaQuery.of(context).size.height * 0.005,
                 ),
                 ListView.builder(
                   shrinkWrap: true,
@@ -94,12 +95,21 @@ class Committee extends StatelessWidget {
                               child: CircleAvatar(
                                 radius: 100,
                                 child: CachedNetworkImage(
-                                  imageUrl: internationalAdvisoryCommittee[index].imageUrl,
+                                  imageUrl:
+                                      internationalAdvisoryCommittee[index]
+                                          .imageUrl,
+                                  progressIndicatorBuilder:
+                                      (context, url, downloadProgress) =>
+                                          Center(
+                                            child: CircularProgressIndicator(
+                                                value: downloadProgress.progress),
+                                          ),
                                 ),
                               ),
                             ),
                             SizedBox(
-                              height: MediaQuery.of(context).size.height*0.005,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.005,
                             ),
                             Padding(
                               padding: const EdgeInsets.all(4.0),
@@ -134,13 +144,13 @@ class Committee extends StatelessWidget {
                   ),
                   itemCount: internationalAdvisoryCommittee.length,
                 ),
-          
+
                 /************************* 
                 END OF INTERNATIONAL ADVISORY COMMITTEE
                 ***************************/
-          
+
                 SizedBox(
-                  height: MediaQuery.of(context).size.height*0.01,
+                  height: MediaQuery.of(context).size.height * 0.01,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -162,7 +172,7 @@ class Committee extends StatelessWidget {
                   color: Colors.white,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height*0.005,
+                  height: MediaQuery.of(context).size.height * 0.005,
                 ),
                 ListView.builder(
                   shrinkWrap: true,
@@ -182,12 +192,20 @@ class Committee extends StatelessWidget {
                                 radius: 100,
                                 child: CachedNetworkImage(
                                   //fit: BoxFit.cover,
-                                  imageUrl: nationalAdvisoryCommittee[index].imageUrl,
+                                  imageUrl:
+                                      nationalAdvisoryCommittee[index].imageUrl,
+                                  progressIndicatorBuilder:
+                                      (context, url, downloadProgress) =>
+                                          Center(
+                                            child: CircularProgressIndicator(
+                                                value: downloadProgress.progress),
+                                          ),
                                 ),
                               ),
                             ),
                             SizedBox(
-                              height: MediaQuery.of(context).size.height*0.005,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.005,
                             ),
                             Padding(
                               padding: const EdgeInsets.all(4.0),
@@ -211,10 +229,10 @@ class Committee extends StatelessWidget {
                               ),
                             ),
                             Divider(
-                                height: 20,
-                                thickness: 1,
-                                color: Colors.white,
-                              ),
+                              height: 20,
+                              thickness: 1,
+                              color: Colors.white,
+                            ),
                           ],
                         ),
                       ),
@@ -226,7 +244,7 @@ class Committee extends StatelessWidget {
                  * END OF NATIONAL ADVISORY COMMITTEE
                  *******************/
                 SizedBox(
-                  height: MediaQuery.of(context).size.height*0.01,
+                  height: MediaQuery.of(context).size.height * 0.01,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -291,11 +309,18 @@ class Committee extends StatelessWidget {
                                 radius: 100,
                                 child: CachedNetworkImage(
                                   imageUrl: organisingCommitee[index].imageUrl,
+                                  progressIndicatorBuilder:
+                                      (context, url, downloadProgress) =>
+                                          Center(
+                                            child: CircularProgressIndicator(
+                                                value: downloadProgress.progress),
+                                          ),
                                 ),
                               ),
                             ),
                             SizedBox(
-                              height: MediaQuery.of(context).size.height*0.005,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.005,
                             ),
                             Text(
                               organisingCommitee[index].name,
@@ -331,7 +356,7 @@ class Committee extends StatelessWidget {
                   itemCount: organisingCommitee.length,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height*0.01,
+                  height: MediaQuery.of(context).size.height * 0.01,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -369,7 +394,14 @@ class Committee extends StatelessWidget {
                               child: CircleAvatar(
                                 radius: 100,
                                 child: CachedNetworkImage(
-                                  imageUrl: programAdvisoryCommitee[index].imageUrl,
+                                  imageUrl:
+                                      programAdvisoryCommitee[index].imageUrl,
+                                  progressIndicatorBuilder:
+                                      (context, url, downloadProgress) =>
+                                          Center(
+                                            child: CircularProgressIndicator(
+                                                value: downloadProgress.progress),
+                                          ),
                                 ),
                               ),
                             ),
@@ -398,10 +430,10 @@ class Committee extends StatelessWidget {
                               ),
                             ),
                             Divider(
-                                height: 20,
-                                thickness: 1,
-                                color: Colors.white,
-                              ),
+                              height: 20,
+                              thickness: 1,
+                              color: Colors.white,
+                            ),
                           ],
                         ),
                       ),
@@ -410,7 +442,7 @@ class Committee extends StatelessWidget {
                   itemCount: programAdvisoryCommitee.length,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height*0.01,
+                  height: MediaQuery.of(context).size.height * 0.01,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -449,11 +481,18 @@ class Committee extends StatelessWidget {
                                 radius: 100,
                                 child: CachedNetworkImage(
                                   imageUrl: publicityChairs[index].imageUrl,
+                                  progressIndicatorBuilder:
+                                      (context, url, downloadProgress) =>
+                                          Center(
+                                            child: CircularProgressIndicator(
+                                                value: downloadProgress.progress),
+                                          ),
                                 ),
                               ),
                             ),
                             SizedBox(
-                              height: MediaQuery.of(context).size.height*0.005,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.005,
                             ),
                             Text(
                               publicityChairs[index].name,
@@ -489,9 +528,8 @@ class Committee extends StatelessWidget {
                   itemCount: publicityChairs.length,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height*0.01,
+                  height: MediaQuery.of(context).size.height * 0.01,
                 ),
-                
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Center(
@@ -533,11 +571,18 @@ class Committee extends StatelessWidget {
                                 radius: 100,
                                 child: CachedNetworkImage(
                                   imageUrl: sponsorChairs[index].imageUrl,
+                                  progressIndicatorBuilder:
+                                      (context, url, downloadProgress) =>
+                                          Center(
+                                            child: CircularProgressIndicator(
+                                                value: downloadProgress.progress),
+                                          ),
                                 ),
                               ),
                             ),
                             SizedBox(
-                              height: MediaQuery.of(context).size.height*0.005,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.005,
                             ),
                             Text(
                               sponsorChairs[index].name,
@@ -561,9 +606,8 @@ class Committee extends StatelessWidget {
                   itemCount: sponsorChairs.length,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height*0.01,
+                  height: MediaQuery.of(context).size.height * 0.01,
                 ),
-                
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Center(
@@ -605,6 +649,12 @@ class Committee extends StatelessWidget {
                                 radius: 100,
                                 child: CachedNetworkImage(
                                   imageUrl: webChairs[index].imageUrl,
+                                  progressIndicatorBuilder:
+                                      (context, url, downloadProgress) =>
+                                          Center(
+                                            child: CircularProgressIndicator(
+                                                value: downloadProgress.progress),
+                                          ),
                                 ),
                               ),
                             ),
@@ -621,10 +671,10 @@ class Committee extends StatelessWidget {
                               ),
                             ),
                             Divider(
-                                height: 20,
-                                thickness: 1,
-                                color: Colors.white,
-                              ),
+                              height: 20,
+                              thickness: 1,
+                              color: Colors.white,
+                            ),
                           ],
                         ),
                       ),
@@ -633,7 +683,7 @@ class Committee extends StatelessWidget {
                   itemCount: webChairs.length,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height*0.01,
+                  height: MediaQuery.of(context).size.height * 0.01,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -675,7 +725,14 @@ class Committee extends StatelessWidget {
                               child: CircleAvatar(
                                 radius: 100,
                                 child: CachedNetworkImage(
-                                  imageUrl:specialSessionChairs[index].imageUrl,
+                                  imageUrl:
+                                      specialSessionChairs[index].imageUrl,
+                                  progressIndicatorBuilder:
+                                      (context, url, downloadProgress) =>
+                                          Center(
+                                            child: CircularProgressIndicator(
+                                                value: downloadProgress.progress),
+                                          ),
                                 ),
                               ),
                             ),
@@ -692,19 +749,19 @@ class Committee extends StatelessWidget {
                               ),
                             ),
                             Divider(
-                                height: 20,
-                                thickness: 1,
-                                color: Colors.white,
-                              ),
+                              height: 20,
+                              thickness: 1,
+                              color: Colors.white,
+                            ),
                           ],
                         ),
                       ),
                     ),
                   ),
-                  itemCount:specialSessionChairs.length,
+                  itemCount: specialSessionChairs.length,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height*0.01,
+                  height: MediaQuery.of(context).size.height * 0.01,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -746,7 +803,13 @@ class Committee extends StatelessWidget {
                               child: CircleAvatar(
                                 radius: 100,
                                 child: CachedNetworkImage(
-                                  imageUrl:financeChairs[index].imageUrl,
+                                  imageUrl: financeChairs[index].imageUrl,
+                                  progressIndicatorBuilder:
+                                      (context, url, downloadProgress) =>
+                                          Center(
+                                            child: CircularProgressIndicator(
+                                                value: downloadProgress.progress),
+                                          ),
                                 ),
                               ),
                             ),
@@ -763,19 +826,19 @@ class Committee extends StatelessWidget {
                               ),
                             ),
                             Divider(
-                                height: 20,
-                                thickness: 1,
-                                color: Colors.white,
-                              ),
+                              height: 20,
+                              thickness: 1,
+                              color: Colors.white,
+                            ),
                           ],
                         ),
                       ),
                     ),
                   ),
-                  itemCount:financeChairs.length,
+                  itemCount: financeChairs.length,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height*0.01,
+                  height: MediaQuery.of(context).size.height * 0.01,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -817,7 +880,13 @@ class Committee extends StatelessWidget {
                               child: CircleAvatar(
                                 radius: 100,
                                 child: CachedNetworkImage(
-                                  imageUrl:registrationChairs[index].imageUrl,
+                                  imageUrl: registrationChairs[index].imageUrl,
+                                  progressIndicatorBuilder:
+                                      (context, url, downloadProgress) =>
+                                          Center(
+                                            child: CircularProgressIndicator(
+                                                value: downloadProgress.progress),
+                                          ),
                                 ),
                               ),
                             ),
@@ -838,7 +907,7 @@ class Committee extends StatelessWidget {
                       ),
                     ),
                   ),
-                  itemCount:registrationChairs.length,
+                  itemCount: registrationChairs.length,
                 ),
                 SizedBox(
                   height: 20,
@@ -890,10 +959,10 @@ class Committee extends StatelessWidget {
                       ),
                     ),
                   ),
-                  itemCount:localOrganisingchairs.length,
+                  itemCount: localOrganisingchairs.length,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height*0.01,
+                  height: MediaQuery.of(context).size.height * 0.01,
                 ),
                 Divider(
                   height: 20,
@@ -954,7 +1023,14 @@ class Committee extends StatelessWidget {
                               child: CircleAvatar(
                                 radius: 100,
                                 child: CachedNetworkImage(
-                                  imageUrl:technicalProgramCommitee[index].imageUrl,
+                                  imageUrl:
+                                      technicalProgramCommitee[index].imageUrl,
+                                  progressIndicatorBuilder:
+                                      (context, url, downloadProgress) =>
+                                          Center(
+                                            child: CircularProgressIndicator(
+                                                value: downloadProgress.progress),
+                                          ),
                                 ),
                               ),
                             ),
@@ -983,19 +1059,19 @@ class Committee extends StatelessWidget {
                               ),
                             ),
                             Divider(
-                                height: 20,
-                                thickness: 1,
-                                color: Colors.white,
-                              ),
+                              height: 20,
+                              thickness: 1,
+                              color: Colors.white,
+                            ),
                           ],
                         ),
                       ),
                     ),
                   ),
-                  itemCount:technicalProgramCommitee.length,
+                  itemCount: technicalProgramCommitee.length,
                 ),
                 SizedBox(
-                  height:MediaQuery.of(context).size.height*0.01,
+                  height: MediaQuery.of(context).size.height * 0.01,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -1034,11 +1110,11 @@ class Committee extends StatelessWidget {
                                 child: Text(
                                   tpcMembers[index].name,
                                   style: TextStyle(
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.normal,
-                                  fontFamily: 'Raleway',
-                              ),
-                              textAlign: TextAlign.center,
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: 'Raleway',
+                                  ),
+                                  textAlign: TextAlign.center,
                                 ),
                               ),
                             ),
@@ -1048,30 +1124,29 @@ class Committee extends StatelessWidget {
                                 child: Text(
                                   tpcMembers[index].designation,
                                   style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.normal,
-                                  fontFamily: 'Raleway',
-                              ),
-                              textAlign: TextAlign.center,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: 'Raleway',
+                                  ),
+                                  textAlign: TextAlign.center,
                                 ),
                               ),
                             ),
                             Divider(
-                                height: 20,
-                                thickness: 1,
-                                color: Colors.white,
-                              ),
+                              height: 20,
+                              thickness: 1,
+                              color: Colors.white,
+                            ),
                           ],
                         ),
                       ),
                     ),
                   ),
-                  itemCount:tpcMembers.length,
+                  itemCount: tpcMembers.length,
                 ),
               ],
             ),
           ),
-        )
-        );
+        ));
   }
 }

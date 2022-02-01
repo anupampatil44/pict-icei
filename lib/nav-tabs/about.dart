@@ -177,7 +177,7 @@ class About extends StatelessWidget {
               //   ),
               // )),
               Padding(
-               padding: const EdgeInsets.fromLTRB(4, 12, 4, 0),
+                padding: const EdgeInsets.fromLTRB(4, 12, 4, 0),
                 child: Center(
                   child: Text(
                     "Pune Institute of Computer Technology (PICT), an elite academic Institute located in Pune (India), which is rightly known as “The Oxford of the East”, playing an inspiring role in the education sector since its establishment in 1983.",
@@ -193,7 +193,16 @@ class About extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(8, 12, 8, 0),
                 child: Center(
                   child: InteractiveViewer(
-                    child: CachedNetworkImage(imageUrl: 'https://icei-app.s3.filebase.com/about_pict2.jpg'),
+                    child: CachedNetworkImage(
+                      imageUrl:
+                          'https://icei-app.s3.filebase.com/about_pict2.jpg',
+                      progressIndicatorBuilder:
+                          (context, url, downloadProgress) =>
+                              Center(
+                                child: CircularProgressIndicator(
+                                    value: downloadProgress.progress),
+                              ),
+                    ),
                   ),
                 ),
               ),
@@ -211,7 +220,7 @@ class About extends StatelessWidget {
                 ),
               ),
               Padding(
-               padding: const EdgeInsets.fromLTRB(4, 12, 4, 0),
+                padding: const EdgeInsets.fromLTRB(4, 12, 4, 0),
                 child: Center(
                   child: Text(
                     "Institute is UGC Approved, ISO 9001:2015 Certified, and is NAAC Accredited (3rd Cycle). All UG programmes of PICT are NBA Accredited (CE and E&TC – 6 times, IT – 4 times). PICT is Ranked 8th among private Engineering Institutions in India, 1st among all private Engineering Institutions in Maharashtra, and 4th among all Engineering Institutions including IITs, NITs, and Govt. Colleges in Maharashtra (as per the EDU-RAND ranking- 2015). As per the NIRF 2020 Ranking, PICT is in rank band of 201 to 250.",
