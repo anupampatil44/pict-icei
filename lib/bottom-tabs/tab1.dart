@@ -35,7 +35,7 @@ class _Tab1State extends State<Tab1> {
   @override
   Widget build(BuildContext context) {
     countTime = CountDown()
-        .timeLeft(DateTime.parse("2022-03-10"), "Conference ongoing now!");
+        .timeLeft(DateTime.parse("2022-03-10 10:00:00"), "Conference ongoing now!");
     return Center(
       child: Container(
         decoration: const BoxDecoration(
