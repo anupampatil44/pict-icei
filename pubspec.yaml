@@ -83,6 +83,7 @@ flutter:
     - assets/
     - assets/sponsors/
     - assets/icons/
+    - assets/additional_logos/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

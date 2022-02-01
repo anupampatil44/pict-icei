@@ -1,21 +1,24 @@
+// ignore: invalid_language_version_override
 import 'dart:async';
+//import 'dart:html';
 
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:pict_icei/pages/homelayout.dart';
 
-class splashscreen extends StatefulWidget {
+class SplashScreen extends StatefulWidget {
   @override
-  _splashscreenState createState() => _splashscreenState();
+  _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _splashscreenState extends State<splashscreen> {
-  @override
+class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin{
+  late AnimationController animationController;
+
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: 2),
+        Duration(seconds: 3),
         () => Navigator.pushReplacement(
               context,
               // MaterialPageRoute(builder:
@@ -25,61 +28,170 @@ class _splashscreenState extends State<splashscreen> {
               PageTransition(
                   type: PageTransitionType.rightToLeftWithFade,
                   child: homelayout()),
-            ));
+            )
+            );
+            animationController=AnimationController(
+              duration: Duration(seconds: 3),
+              vsync: this,
+            )..repeat();
   }
+@override
+void dispose(){
+    animationController.dispose();
+    super.dispose();
+}
+
+Animatable<Color?> background=TweenSequence<Color?>(
+  [
+  TweenSequenceItem(
+    weight: 1.0,
+    tween: ColorTween(
+      begin:Colors.white,
+      end:Colors.cyan.shade100,
+    ),
+    ),
+    TweenSequenceItem(
+    weight: 1.0,
+    tween: ColorTween(
+      begin:Colors.cyan.shade200,
+      end:Colors.green.shade200,
+    ),
+    ),
+    TweenSequenceItem(
+    weight: 1.0,
+    tween: ColorTween(
+      begin:Colors.green.shade100,
+      end:Colors.white,
+    ),
+    ),
+]
+);
+
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.white,
-        body: SafeArea(
-          child: Center(
-            child: Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  DelayedDisplay(
-                    delay: Duration(seconds: 1),
-                    child: Center(
-                      child: SafeArea(
-                        child: Center(
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+    return AnimatedBuilder(
+      animation: animationController,
+      builder: (context,child){
+      return Scaffold(
+          //backgroundColor: Colors.white,
+          body: SafeArea(
+            child: Center(
+              child: Container(
+                color:background.evaluate(AlwaysStoppedAnimation(animationController.value)),
+                padding: EdgeInsets.fromLTRB(10,0,10,0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    DelayedDisplay(
+                      delay: Duration(seconds: 1),
+                      child: Center(
+                        child: SafeArea(
+                          child: Center(
+                            child: Column(
                               children: [
-                                Image.asset(
-                                  'assets/logo-cakesoft-horizontal.png',
-                                  height: 150,
-                                  width: 150,
-                                ),
-                                Image.asset(
-                                  'assets/logo_sarvatra.png',
-                                  height: 150,
-                                  width: 150,
-                                ),
-                              ]),
+                                Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: [
+                                      Image.asset(
+                                        'assets/sponsors/logo-cakesoft.png',
+                                        height: 150,
+                                        width: 150,
+                                      ),
+                                      Image.asset(
+                                        'assets/sponsors/logo_sarvatra.png',
+                                        height: 125,
+                                        width: 125,
+                                      ),
+                                    ]
+                                    ),
+                                    Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: [
+                                      Image.asset(
+                                        'assets/sponsors/logo_AlphaSense.png',
+                                        height: 125,
+                                        width: 125,
+                                      ),
+                                      Image.asset(
+                                        'assets/sponsors/logo_tarana.png',
+                                        height: 125,
+                                        width: 125,
+                                      ),
+                                    ]
+                                    ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  DelayedDisplay(
-                    delay: Duration(seconds: 1),
-                    child: Text(
-                      'ICEI-2022',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: "Raleway",
-                        fontSize: 50.0,
-                        fontWeight: FontWeight.w500,
+                    DelayedDisplay(
+                      delay: Duration(seconds: 1),
+                      child: Text(
+                        'ICEI-2022',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontFamily: "Raleway",
+                          fontSize: 50.0,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
-                  ),
-                  DelayedDisplay(
+                    
+                    DelayedDisplay(
                       delay: Duration(seconds: 1),
-                      child: Image.asset('assets/Pict_logo.png', height: 140, width: 140)),
-                ],
+                      child: Center(
+                        child: SafeArea(
+                          child: Center(
+                            child: Column(
+                              children: [
+                                Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: [
+                                      Image.asset(
+                                        'assets/additional_logos/bentham-science-logo.png',
+                                        height: 100,
+                                        width: 100,
+                                      ),
+                                      Image.asset(
+                                        'assets/additional_logos/IIC_Logo.png',
+                                        height: 125,
+                                        width: 125,
+                                      ),
+                                    ]
+                                    ),
+                                    Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: [
+                                      Image.asset(
+                                        'assets/additional_logos/springer-logo.png',
+                                        height: 125,
+                                        width: 125,
+                                      ),
+                                    ]
+                                    ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    DelayedDisplay(
+                        delay: Duration(seconds: 1),
+                        child: Image.asset('assets/additional_logos/Pict_logo.png', height: 100, width: 100
+                        )
+                        ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height*0.03,
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-        ));
+          )
+        );
+      },
+    );
   }
 }
