@@ -79,7 +79,7 @@ class RegistrationFees extends StatelessWidget {
                             MaterialPageRoute(builder: (_) {
                               return ImageScreen(
                                 imgUrl:
-                                    "https://icei-app.s3.filebase.com/Registration/reg_fees.png",
+                                    "https://icei-app.s3.filebase.com/Registration/registration.png",
                                 description: 'Registration Fee',
                               );
                             }),
@@ -87,7 +87,7 @@ class RegistrationFees extends StatelessWidget {
                         },
                         child: CachedNetworkImage(
                           imageUrl:
-                              "https://icei-app.s3.filebase.com/Registration/reg_fees.png",
+                              "https://icei-app.s3.filebase.com/Registration/registration.png",
                           progressIndicatorBuilder:
                               (context, url, downloadProgress) =>
                                   Center(

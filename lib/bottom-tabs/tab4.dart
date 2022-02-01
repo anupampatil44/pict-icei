@@ -12,7 +12,6 @@ class Tab4 extends StatefulWidget {
   _Tab4State createState() => _Tab4State();
 }
 
-// TODO: Registration form and Copyright form
 class _Tab4State extends State<Tab4> {
   launchURL(String url) async {
     if (await canLaunch(url)) {
@@ -307,58 +306,58 @@ class _Tab4State extends State<Tab4> {
                   },
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12),
-                child: InkWell(
-                  child: Container(
-                    height: MediaQuery.of(context).size.width * 0.20,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.white.withOpacity(0.6)),
-                    child: Row(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.symmetric(
-                            horizontal: 15,
-                            vertical: 15,
-                          ),
-                          child: Image.asset(
-                            'assets/icons/pdf_icon.png',
-                          ),
-                        ),
-                        Expanded(
-                            child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Registration Form",
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: 'Raleway',
-                                fontSize:
-                                    SizeConfig.getProportionateScreenHeight(25),
-                              ),
-                            ),
-                            Text(
-                              '.pdf file',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: 'Raleway',
-                                fontSize:
-                                    SizeConfig.getProportionateScreenHeight(
-                                        25 / 2),
-                              ),
-                            ),
-                          ],
-                        ))
-                      ],
-                    ),
-                  ),
-                  onTap: () {},
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(vertical: 12),
+              //   child: InkWell(
+              //     child: Container(
+              //       height: MediaQuery.of(context).size.width * 0.20,
+              //       decoration: BoxDecoration(
+              //           shape: BoxShape.rectangle,
+              //           borderRadius: BorderRadius.circular(10),
+              //           color: Colors.white.withOpacity(0.6)),
+              //       child: Row(
+              //         children: [
+              //           Container(
+              //             margin: const EdgeInsets.symmetric(
+              //               horizontal: 15,
+              //               vertical: 15,
+              //             ),
+              //             child: Image.asset(
+              //               'assets/icons/pdf_icon.png',
+              //             ),
+              //           ),
+              //           Expanded(
+              //               child: Column(
+              //             mainAxisAlignment: MainAxisAlignment.center,
+              //             crossAxisAlignment: CrossAxisAlignment.start,
+              //             children: [
+              //               Text(
+              //                 "Registration Form",
+              //                 style: TextStyle(
+              //                   color: Colors.black,
+              //                   fontFamily: 'Raleway',
+              //                   fontSize:
+              //                       SizeConfig.getProportionateScreenHeight(25),
+              //                 ),
+              //               ),
+              //               Text(
+              //                 '.pdf file',
+              //                 style: TextStyle(
+              //                   color: Colors.black,
+              //                   fontFamily: 'Raleway',
+              //                   fontSize:
+              //                       SizeConfig.getProportionateScreenHeight(
+              //                           25 / 2),
+              //                 ),
+              //               ),
+              //             ],
+              //           ))
+              //         ],
+              //       ),
+              //     ),
+              //     onTap: () {},
+              //   ),
+              // ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 12),
                 child: InkWell(
@@ -408,7 +407,17 @@ class _Tab4State extends State<Tab4> {
                       ],
                     ),
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => NewtorkPdfViewer(
+                          link:
+                              'https://icei-app.s3.filebase.com/icei_copyright_form.pdf',
+                          title: 'Copyright Form',
+                        ),
+                      ),
+                    );
+                  },
                 ),
               ),
               Padding(
