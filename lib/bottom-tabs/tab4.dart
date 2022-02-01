@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:pict_icei/utils/network_pdf_viewer.dart';
+import 'package:pict_icei/widgets/size_widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Tab4 extends StatefulWidget {
@@ -99,18 +100,21 @@ class _Tab4State extends State<Tab4> {
                           children: [
                             Text(
                               "Call for Paper",
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize: 25,
+                                fontSize:
+                                    SizeConfig.getProportionateScreenHeight(25),
                               ),
                             ),
                             Text(
                               '.pdf file',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize: 12.5,
+                                fontSize:
+                                    SizeConfig.getProportionateScreenHeight(
+                                        25 / 2),
                               ),
                             ),
                           ],
@@ -158,18 +162,21 @@ class _Tab4State extends State<Tab4> {
                           children: [
                             Text(
                               "Conference Brochure",
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize: 25,
+                                fontSize:
+                                    SizeConfig.getProportionateScreenHeight(25),
                               ),
                             ),
                             Text(
                               '.pdf file',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize: 12.5,
+                                fontSize:
+                                    SizeConfig.getProportionateScreenHeight(
+                                        25 / 2),
                               ),
                             ),
                           ],
@@ -217,18 +224,21 @@ class _Tab4State extends State<Tab4> {
                           children: [
                             Text(
                               "Template for RAEEE",
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize: 25,
+                                fontSize:
+                                    SizeConfig.getProportionateScreenHeight(25),
                               ),
                             ),
                             Text(
                               '.docx file',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize: 12.5,
+                                fontSize:
+                                    SizeConfig.getProportionateScreenHeight(
+                                        25 / 2),
                               ),
                             ),
                           ],
@@ -269,18 +279,21 @@ class _Tab4State extends State<Tab4> {
                           children: [
                             Text(
                               "Template for Springer",
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize: 25,
+                                fontSize:
+                                    SizeConfig.getProportionateScreenHeight(25),
                               ),
                             ),
                             Text(
                               '.docx file',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize: 12.5,
+                                fontSize:
+                                    SizeConfig.getProportionateScreenHeight(
+                                        25 / 2),
                               ),
                             ),
                           ],
@@ -321,18 +334,21 @@ class _Tab4State extends State<Tab4> {
                           children: [
                             Text(
                               "Registration Form",
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize: 25,
+                                fontSize:
+                                    SizeConfig.getProportionateScreenHeight(25),
                               ),
                             ),
                             Text(
                               '.pdf file',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize: 12.5,
+                                fontSize:
+                                    SizeConfig.getProportionateScreenHeight(
+                                        25 / 2),
                               ),
                             ),
                           ],
@@ -370,18 +386,21 @@ class _Tab4State extends State<Tab4> {
                           children: [
                             Text(
                               "Copyright Form",
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize: 25,
+                                fontSize:
+                                    SizeConfig.getProportionateScreenHeight(25),
                               ),
                             ),
                             Text(
                               '.pdf file',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize: 12.5,
+                                fontSize:
+                                    SizeConfig.getProportionateScreenHeight(
+                                        25 / 2),
                               ),
                             ),
                           ],
@@ -419,18 +438,21 @@ class _Tab4State extends State<Tab4> {
                           children: [
                             Text(
                               "Privacy Policy",
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize: 25,
+                                fontSize:
+                                    SizeConfig.getProportionateScreenHeight(25),
                               ),
                             ),
                             Text(
                               'url',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize: 12.5,
+                                fontSize:
+                                    SizeConfig.getProportionateScreenHeight(
+                                        25 / 2),
                               ),
                             ),
                           ],
