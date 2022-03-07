@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
             )
             );
             animationController=AnimationController(
-              duration: Duration(seconds: 3),
+              duration: Duration(seconds:3),
               vsync: this,
             )..repeat();
   }
@@ -93,10 +93,11 @@ Animatable<Color?> background=TweenSequence<Color?>(
                                 Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                                     children: [
+                                      //wait
                                       Image.asset(
-                                        'assets/sponsors/logo-cakesoft.png',
-                                        height: 150,
-                                        width: 150,
+                                        'assets/sponsors/iMocha-Logo.png',
+                                        height: 125,
+                                        width: 125,
                                       ),
                                       Image.asset(
                                         'assets/sponsors/logo_sarvatra.png',
@@ -120,6 +121,21 @@ Animatable<Color?> background=TweenSequence<Color?>(
                                       ),
                                     ]
                                     ),
+                                     Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: [
+                                      Image.asset(
+                                        'assets/sponsors/logo-cakesoft.png',
+                                        height: 125,
+                                        width: 125,
+                                      ),
+                                      Image.asset(
+                                        'assets/sponsors/MONIMO_logo.png',
+                                        height: 125,
+                                        width: 125,
+                                      ),
+                                    ]
+                                    ),
                               ],
                             ),
                           ),
@@ -133,7 +149,7 @@ Animatable<Color?> background=TweenSequence<Color?>(
                         style: TextStyle(
                           color: Colors.black,
                           fontFamily: "Raleway",
-                          fontSize: 50.0,
+                          fontSize: 40.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -151,8 +167,8 @@ Animatable<Color?> background=TweenSequence<Color?>(
                                     children: [
                                       Image.asset(
                                         'assets/additional_logos/bentham-science-logo.png',
-                                        height: 100,
-                                        width: 100,
+                                        height: 90,
+                                        width: 90,
                                       ),
                                       Image.asset(
                                         'assets/additional_logos/IIC_Logo.png',
@@ -166,6 +182,11 @@ Animatable<Color?> background=TweenSequence<Color?>(
                                     children: [
                                       Image.asset(
                                         'assets/additional_logos/springer-logo.png',
+                                        height: 125,
+                                        width: 125,
+                                      ),
+                                      Image.asset(
+                                        'assets/sponsors/e2open.png',
                                         height: 125,
                                         width: 125,
                                       ),

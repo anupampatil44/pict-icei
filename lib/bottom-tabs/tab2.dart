@@ -68,10 +68,10 @@ class Tab2 extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(width: 2,color: Colors.blue.shade700),
-                      //borderRadius: BorderRadius.circular(20),
-                    ),
+                    // decoration: BoxDecoration(
+                    //   border: Border.all(width: 2,color: Colors.blue.shade700),
+                    //   //borderRadius: BorderRadius.circular(20),
+                    // ),
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                       child: Center(
@@ -79,7 +79,7 @@ class Tab2 extends StatelessWidget {
                         //   child: Image.network('https://icei-app.s3.filebase.com/call-for-paper.jpg'),
                         // ),
                         child:
-                        CachedNetworkImage(imageUrl: 'https://icei-app.s3.filebase.com/call-for-paper-min.jpg', 
+                        CachedNetworkImage(imageUrl: 'https://icei-app.s3.filebase.com/latest_updates_sharvie/cop_new.jpg', 
                         progressIndicatorBuilder:
                                     (context, url, downloadProgress) =>
                                         Center(
