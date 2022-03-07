@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 //import 'package:delayed_display/delayed_display.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class Tab3 extends StatelessWidget {
@@ -25,49 +26,125 @@ class Tab3 extends StatelessWidget {
           child: BackdropFilter(
             //filter: ImageFilter.blur(sigmaX: 2,sigmaY: 1),
             filter:ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
-            child: Container(
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Column(
-                  children: [
-                    SizedBox(height: mediaQuery.height * 0.18),
-                    Container(
-                      padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                      height: 50.0,
-                      width: double.infinity,
-                      //color:Colors.white.withOpacity(0.6),
-                      child: Text(
-                        "SCHEDULES PAGE",
-                        style: TextStyle(
-                          // decoration: TextDecoration.underline,
-                          // decorationStyle: TextDecorationStyle.solid,
-                          // decorationColor: Colors.lightBlue,
-                          // decorationThickness: 3,
-                          color: Colors.black,
-                          //color: Colors.white,
-                          fontWeight: FontWeight.w800,
-                          fontFamily: 'Raleway',
-                          fontSize: 25,),
-                          textAlign: TextAlign.center,
+            child: ListView(
+              physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+              children:[
+                Container(
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    children: [
+                      SizedBox(height: mediaQuery.height * 0.03),
+                      Container(
+                        padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                        height: 50.0,
+                        width: double.infinity,
+                        //color:Colors.white.withOpacity(0.6),
+                        child: Text(
+                          "CONFERENCE SCHEDULE",
+                          style: TextStyle(
+                            // decoration: TextDecoration.underline,
+                            // decorationStyle: TextDecorationStyle.solid,
+                            // decorationColor: Colors.lightBlue,
+                            // decorationThickness: 3,
+                            color: Colors.black,
+                            //color: Colors.white,
+                            fontWeight: FontWeight.w800,
+                            fontFamily: 'Raleway',
+                            fontSize: 25,),
+                            textAlign: TextAlign.center,
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          //color:Colors.black.withOpacity(0.5),
+                          color:Colors.white.withOpacity(0.6),
+                        ),
                       ),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        //color:Colors.black.withOpacity(0.5),
-                        color:Colors.white.withOpacity(0.6),
+                      SizedBox(height: mediaQuery.height * 0.05),
+                      scheduleContainer("Problem Submission Deadline", "December 15, 2021",
+                          mediaQuery.height * 0.05),
+                      SizedBox(height: mediaQuery.height * 0.05),
+                      scheduleContainer("Acceptance Notification", "February 10, 2022",
+                          mediaQuery.height * 0.05),
+                      SizedBox(height: mediaQuery.height * 0.05),
+                      scheduleContainer("Camera Ready Paper Submission",
+                          "March 03, 2022", mediaQuery.height * 0.05),
+                      SizedBox(height: mediaQuery.height * 0.02),
+                      Divider(
+                        height: 3.0,
+                        thickness: 3.0,
+                        color: Colors.white,
+                      ),
+                      SizedBox(height: mediaQuery.height * 0.02),
+                      Container(
+                        padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                        height: 50.0,
+                        width: double.infinity,
+                        //color:Colors.white.withOpacity(0.6),
+                        child: Text(
+                          "PROGRAM AT A GLANCE",
+                          style: TextStyle(
+                            // decoration: TextDecoration.underline,
+                            // decorationStyle: TextDecorationStyle.solid,
+                            // decorationColor: Colors.lightBlue,
+                            // decorationThickness: 3,
+                            color: Colors.black,
+                            //color: Colors.white,
+                            fontWeight: FontWeight.w800,
+                            fontFamily: 'Raleway',
+                            fontSize: 25,),
+                            textAlign: TextAlign.center,
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          //color:Colors.black.withOpacity(0.5),
+                          color:Colors.white.withOpacity(0.6),
+                        ),
+                      ),
+                      SizedBox(height: mediaQuery.height * 0.05),
+                      Container(
+                    // decoration: BoxDecoration(
+                    //   border: Border.all(width: 2,color: Colors.blue.shade700),
+                    //   //borderRadius: BorderRadius.circular(20),
+                    // ),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                      child: Center(
+                        child:
+                        CachedNetworkImage(imageUrl:'https://icei-app.s3.filebase.com/latest_updates_sharvie/cp_1.jpg', 
+                        progressIndicatorBuilder:
+                                    (context, url, downloadProgress) =>
+                                        Center(
+                                          child: CircularProgressIndicator(
+                                              value: downloadProgress.progress),
+                                        ),)
                       ),
                     ),
-                    SizedBox(height: mediaQuery.height * 0.05),
-                    scheduleContainer("Problem Submission Deadline", "December 15, 2021",
-                        mediaQuery.height * 0.05),
-                    SizedBox(height: mediaQuery.height * 0.05),
-                    scheduleContainer("Acceptance Notification", "January 25, 2022",
-                        mediaQuery.height * 0.05),
-                    SizedBox(height: mediaQuery.height * 0.05),
-                    scheduleContainer("Camera Ready Paper Submission",
-                        "January 30, 2022", mediaQuery.height * 0.05)
-                  ],
+                  ),
+                      Container(
+                    // decoration: BoxDecoration(
+                    //   border: Border.all(width: 2,color: Colors.blue.shade700),
+                    //   //borderRadius: BorderRadius.circular(20),
+                    // ),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                      child: Center(
+                        child:
+                        CachedNetworkImage(imageUrl:'https://icei-app.s3.filebase.com/latest_updates_sharvie/cp_2.jpg', 
+                        progressIndicatorBuilder:
+                                    (context, url, downloadProgress) =>
+                                        Center(
+                                          child: CircularProgressIndicator(
+                                              value: downloadProgress.progress),
+                                        ),)
+                      ),
+                    ),
+                  ),
+                    ],
+                  ),
                 ),
               ),
+              ],
             ),
           ),
         ),
