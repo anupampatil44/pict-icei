@@ -95,14 +95,14 @@ Animatable<Color?> background=TweenSequence<Color?>(
                                     children: [
                                       //wait
                                       Image.asset(
-                                        'assets/sponsors/iMocha-Logo.png',
-                                        height: 125,
-                                        width: 125,
+                                        'assets/sponsors/imocha.png',
+                                        height: 100,
+                                        width: 100,
                                       ),
                                       Image.asset(
                                         'assets/sponsors/logo_sarvatra.png',
-                                        height: 125,
-                                        width: 125,
+                                        height: 100,
+                                        width: 100,
                                       ),
                                     ]
                                     ),
@@ -126,11 +126,11 @@ Animatable<Color?> background=TweenSequence<Color?>(
                                     children: [
                                       Image.asset(
                                         'assets/sponsors/logo-cakesoft.png',
-                                        height: 125,
-                                        width: 125,
+                                        height: 150,
+                                        width: 150,
                                       ),
                                       Image.asset(
-                                        'assets/sponsors/MONIMO_logo.png',
+                                        'assets/sponsors/monimo.png',
                                         height: 125,
                                         width: 125,
                                       ),
