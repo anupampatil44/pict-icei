@@ -37,6 +37,7 @@ android {
         applicationId "com.pict.pict_icei"
         minSdkVersion 19
         targetSdkVersion 30
+        compileSdkVersion 31
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         multiDexEnabled true
