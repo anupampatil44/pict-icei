@@ -42,15 +42,13 @@ class _Tab4State extends State<Tab4> {
     // final mediaQuery = MediaQuery.of(context).size;
     return Container(
       decoration: const BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage("assets/pict_2.jpeg"), fit: BoxFit.cover),
+        image: DecorationImage(image: AssetImage("assets/pict_2.jpeg"), fit: BoxFit.cover),
       ),
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
         child: Center(
           child: ListView(
-            physics:
-                BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+            physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
             padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
             children: [
               SizedBox(
@@ -103,8 +101,7 @@ class _Tab4State extends State<Tab4> {
                               style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize:
-                                    SizeConfig.getProportionateScreenHeight(25),
+                                fontSize: SizeConfig.getProportionateScreenHeight(25),
                               ),
                             ),
                             Text(
@@ -112,9 +109,7 @@ class _Tab4State extends State<Tab4> {
                               style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize:
-                                    SizeConfig.getProportionateScreenHeight(
-                                        25 / 2),
+                                fontSize: SizeConfig.getProportionateScreenHeight(25 / 2),
                               ),
                             ),
                           ],
@@ -126,8 +121,7 @@ class _Tab4State extends State<Tab4> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) => NewtorkPdfViewer(
-                          link:
-                              'https://icei-app.s3.filebase.com/call-for-paper.pdf',
+                          link: 'https://icei-app.s3.filebase.com/call-for-paper.pdf',
                           title: 'Call for Paper',
                         ),
                       ),
@@ -165,8 +159,7 @@ class _Tab4State extends State<Tab4> {
                               style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize:
-                                    SizeConfig.getProportionateScreenHeight(25),
+                                fontSize: SizeConfig.getProportionateScreenHeight(25),
                               ),
                             ),
                             Text(
@@ -174,9 +167,7 @@ class _Tab4State extends State<Tab4> {
                               style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize:
-                                    SizeConfig.getProportionateScreenHeight(
-                                        25 / 2),
+                                fontSize: SizeConfig.getProportionateScreenHeight(25 / 2),
                               ),
                             ),
                           ],
@@ -188,8 +179,7 @@ class _Tab4State extends State<Tab4> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) => NewtorkPdfViewer(
-                          link:
-                              'https://icei-app.s3.filebase.com/ICEI_Brochure.pdf',
+                          link: 'https://icei-app.s3.filebase.com/ICEI_Brochure.pdf',
                           title: 'Conference Brochure',
                         ),
                       ),
@@ -227,8 +217,7 @@ class _Tab4State extends State<Tab4> {
                               style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize:
-                                    SizeConfig.getProportionateScreenHeight(25),
+                                fontSize: SizeConfig.getProportionateScreenHeight(25),
                               ),
                             ),
                             Text(
@@ -236,9 +225,7 @@ class _Tab4State extends State<Tab4> {
                               style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize:
-                                    SizeConfig.getProportionateScreenHeight(
-                                        25 / 2),
+                                fontSize: SizeConfig.getProportionateScreenHeight(25 / 2),
                               ),
                             ),
                           ],
@@ -247,8 +234,7 @@ class _Tab4State extends State<Tab4> {
                     ),
                   ),
                   onTap: () async {
-                    await launchURL(
-                        'https://icei-app.s3.filebase.com/Template_for_paper.dotx');
+                    await launchURL('https://icei-app.s3.filebase.com/Template_for_paper.dotx');
                   },
                 ),
               ),
@@ -282,8 +268,7 @@ class _Tab4State extends State<Tab4> {
                               style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize:
-                                    SizeConfig.getProportionateScreenHeight(25),
+                                fontSize: SizeConfig.getProportionateScreenHeight(25),
                               ),
                             ),
                             Text(
@@ -291,9 +276,7 @@ class _Tab4State extends State<Tab4> {
                               style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize:
-                                    SizeConfig.getProportionateScreenHeight(
-                                        25 / 2),
+                                fontSize: SizeConfig.getProportionateScreenHeight(25 / 2),
                               ),
                             ),
                           ],
@@ -302,8 +285,7 @@ class _Tab4State extends State<Tab4> {
                     ),
                   ),
                   onTap: () async {
-                    await launchURL(
-                        'https://icei-app.s3.filebase.com/templateforspringer.docm');
+                    await launchURL('https://icei-app.s3.filebase.com/templateforspringer.docm');
                   },
                 ),
               ),
@@ -337,8 +319,7 @@ class _Tab4State extends State<Tab4> {
                               style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize:
-                                    SizeConfig.getProportionateScreenHeight(25),
+                                fontSize: SizeConfig.getProportionateScreenHeight(25),
                               ),
                             ),
                             Text(
@@ -346,9 +327,7 @@ class _Tab4State extends State<Tab4> {
                               style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize:
-                                    SizeConfig.getProportionateScreenHeight(
-                                        25 / 2),
+                                fontSize: SizeConfig.getProportionateScreenHeight(25 / 2),
                               ),
                             ),
                           ],
@@ -389,8 +368,7 @@ class _Tab4State extends State<Tab4> {
                               style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize:
-                                    SizeConfig.getProportionateScreenHeight(25),
+                                fontSize: SizeConfig.getProportionateScreenHeight(25),
                               ),
                             ),
                             Text(
@@ -398,9 +376,7 @@ class _Tab4State extends State<Tab4> {
                               style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize:
-                                    SizeConfig.getProportionateScreenHeight(
-                                        25 / 2),
+                                fontSize: SizeConfig.getProportionateScreenHeight(25 / 2),
                               ),
                             ),
                           ],
@@ -441,8 +417,7 @@ class _Tab4State extends State<Tab4> {
                               style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize:
-                                    SizeConfig.getProportionateScreenHeight(25),
+                                fontSize: SizeConfig.getProportionateScreenHeight(25),
                               ),
                             ),
                             Text(
@@ -450,9 +425,7 @@ class _Tab4State extends State<Tab4> {
                               style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Raleway',
-                                fontSize:
-                                    SizeConfig.getProportionateScreenHeight(
-                                        25 / 2),
+                                fontSize: SizeConfig.getProportionateScreenHeight(25 / 2),
                               ),
                             ),
                           ],
@@ -461,8 +434,7 @@ class _Tab4State extends State<Tab4> {
                     ),
                   ),
                   onTap: () async {
-                    await launchURL(
-                        'https://www.icei-pict.org/privacy-policy.html');
+                    await launchURL('https://www.icei-pict.org/privacy-policy.html');
                   },
                 ),
               ),
