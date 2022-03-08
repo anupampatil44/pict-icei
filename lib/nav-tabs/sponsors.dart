@@ -60,8 +60,8 @@ class Sponsors extends StatelessWidget {
               sponsorWidget('assets/sponsors/logo-cakesoft.png'),
               sponsorWidget('assets/sponsors/logo_tarana.png'),
               sponsorWidget('assets/sponsors/e2open.png'),
-              sponsorWidget('assets/sponsors/iMocha-Logo.png'),
-              sponsorWidget('assets/sponsors/MONIMO_logo.png'),
+              sponsorWidget('assets/sponsors/imocha.png'),
+              sponsorWidget('assets/sponsors/monimo.png'),
               SizedBox(height: 10),
               Divider(
                 indent: 20,
